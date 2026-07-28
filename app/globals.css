@@ -241,10 +241,10 @@ a {
 }
 
 .hero-video {
-  z-index: 0;
+  z-index: 1;
   object-fit: cover;
-  opacity: 0.42;
-  filter: saturate(0.64) hue-rotate(6deg) contrast(1.08);
+  opacity: 0.8;
+  filter: saturate(0.92) contrast(1.04) brightness(1.04);
   will-change: transform;
 }
 
@@ -264,14 +264,24 @@ a {
 }
 
 .hero-shade {
-  z-index: 1;
+  z-index: 2;
   background:
-    linear-gradient(180deg, rgba(5, 6, 8, 0.28), rgba(5, 6, 8, 0.16) 43%, #07080a 100%),
-    radial-gradient(circle at 50% 35%, transparent 0, rgba(5, 6, 8, 0.1) 30%, rgba(5, 6, 8, 0.7) 100%);
+    linear-gradient(
+      180deg,
+      rgba(5, 6, 8, 0.1),
+      rgba(5, 6, 8, 0.04) 48%,
+      rgba(7, 8, 10, 0.88) 100%
+    ),
+    radial-gradient(
+      circle at 50% 38%,
+      transparent 0,
+      rgba(5, 6, 8, 0.03) 42%,
+      rgba(5, 6, 8, 0.46) 100%
+    );
 }
 
 .hero-grid {
-  z-index: 2;
+  z-index: 3;
   background-image:
     linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
@@ -281,7 +291,7 @@ a {
 
 .hero-content {
   position: relative;
-  z-index: 3;
+  z-index: 4;
   min-height: max(760px, 100svh);
   padding-top: 120px;
   display: flex;
