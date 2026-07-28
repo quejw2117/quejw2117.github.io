@@ -3,7 +3,6 @@
 import { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import SpecularButton from "./components/SpecularButton";
 
 const projects = [
   {
@@ -109,13 +108,6 @@ export default function Home() {
         y: 34,
         autoAlpha: 0,
       });
-      gsap.set(".hero-work-card", {
-        y: 180,
-        scale: 0.84,
-        rotateX: 9,
-        autoAlpha: 0,
-        transformOrigin: "50% 100%",
-      });
       gsap.set(".hero-video", { scale: 1.14 });
 
       openingTimeline
@@ -215,22 +207,9 @@ export default function Home() {
           "-=1",
         )
         .to(
-          ".hero-work-card",
-          {
-            y: 0,
-            scale: 1,
-            rotateX: 0,
-            autoAlpha: 1,
-            duration: 1.35,
-            stagger: 0.14,
-            ease: "power4.out",
-          },
-          "-=0.72",
-        )
-        .to(
           ".hero-video",
           { scale: 1, duration: 2.2, ease: "power3.out" },
-          "-=1.5",
+          "-=0.85",
         );
 
       gsap.utils.toArray<HTMLElement>(".section-display").forEach((display) => {
@@ -448,6 +427,28 @@ export default function Home() {
           },
         },
       );
+
+      gsap.fromTo(
+        ".contact-item, .qr-placeholder",
+        {
+          y: 76,
+          autoAlpha: 0,
+          clipPath: "inset(0 0 100% 0)",
+        },
+        {
+          y: 0,
+          autoAlpha: 1,
+          clipPath: "inset(0 0 0% 0)",
+          duration: 1.05,
+          stagger: 0.1,
+          ease: "power4.out",
+          scrollTrigger: {
+            trigger: ".contact-directory",
+            start: "top 84%",
+            once: true,
+          },
+        },
+      );
     }, root);
 
     return () => {
@@ -535,78 +536,6 @@ export default function Home() {
             </a>
           </div>
 
-          <div className="hero-showcase" aria-label="精选作品预览">
-            <SpecularButton
-              className="hero-work-card hero-work-card--left"
-              href="#work"
-              ariaLabel="查看社交媒体增长项目"
-              radius={0}
-              lineColor="#eaffb5"
-              baseColor="#454b54"
-              intensity={1.35}
-              shineSize={16}
-              shineFade={34}
-              thickness={1.15}
-              speed={0.18}
-              proximity={380}
-            >
-              <span className="hero-work-top">
-                <b>02</b>
-                <em>SOCIAL GROWTH</em>
-              </span>
-              <span className="hero-work-art hero-work-art--left" aria-hidden="true">
-                <i>100+</i>
-                <i>LEADS</i>
-              </span>
-            </SpecularButton>
-            <SpecularButton
-              className="hero-work-card hero-work-card--main"
-              href="#work"
-              ariaLabel="查看 AIGC 视频工作流项目"
-              radius={0}
-              lineColor="#f4ffd7"
-              baseColor="#4c5360"
-              intensity={1.5}
-              shineSize={18}
-              shineFade={36}
-              thickness={1.25}
-              speed={0.16}
-              proximity={420}
-            >
-              <span className="hero-work-top">
-                <b>01</b>
-                <em>AIGC VIDEO SYSTEM</em>
-              </span>
-              <span className="hero-work-art hero-work-art--main" aria-hidden="true">
-                <i>VISUAL</i>
-                <i>WORKFLOW</i>
-                <small>STRATEGY · PROMPT · MOTION</small>
-              </span>
-            </SpecularButton>
-            <SpecularButton
-              className="hero-work-card hero-work-card--right"
-              href="#work"
-              ariaLabel="查看品牌视觉项目"
-              radius={0}
-              lineColor="#eaffb5"
-              baseColor="#454b54"
-              intensity={1.35}
-              shineSize={16}
-              shineFade={34}
-              thickness={1.15}
-              speed={0.18}
-              proximity={380}
-            >
-              <span className="hero-work-top">
-                <b>03</b>
-                <em>BRAND VISUAL</em>
-              </span>
-              <span className="hero-work-art hero-work-art--right" aria-hidden="true">
-                <i>96%</i>
-                <i>ACCURACY</i>
-              </span>
-            </SpecularButton>
-          </div>
         </div>
       </section>
 
@@ -659,10 +588,6 @@ export default function Home() {
                 </article>
               </div>
 
-              <div className="contact-line">
-                <a href="mailto:1427954145@qq.com">1427954145@qq.com ↗</a>
-                <a href="tel:18250030358">182 5003 0358 ↗</a>
-              </div>
             </div>
           </div>
 
@@ -793,9 +718,44 @@ export default function Home() {
               </span>
             </a>
           </div>
+          <div className="contact-directory">
+            <div className="contact-list" aria-label="联系方式">
+              <div className="contact-item contact-item--pending">
+                <span>GITHUB</span>
+                <strong>待补充链接</strong>
+              </div>
+              <div className="contact-item contact-item--pending">
+                <span>WECHAT</span>
+                <strong>待补充微信号</strong>
+              </div>
+              <a className="contact-item" href="mailto:1427954145@qq.com">
+                <span>QQ / EMAIL</span>
+                <strong>1427954145@qq.com</strong>
+                <i aria-hidden="true">↗</i>
+              </a>
+              <div className="contact-item contact-item--pending">
+                <span>GOOGLE MAIL</span>
+                <strong>待补充 Gmail</strong>
+              </div>
+              <a className="contact-item" href="tel:18250030358">
+                <span>PHONE</span>
+                <strong>182 5003 0358</strong>
+                <i aria-hidden="true">↗</i>
+              </a>
+            </div>
+            <div className="qr-placeholder" aria-label="个人二维码预留位置">
+              <span className="qr-corner qr-corner--tl" />
+              <span className="qr-corner qr-corner--tr" />
+              <span className="qr-corner qr-corner--bl" />
+              <span className="qr-corner qr-corner--br" />
+              <b aria-hidden="true">＋</b>
+              <span>PERSONAL QR</span>
+              <small>个人二维码预留位置</small>
+            </div>
+          </div>
           <div className="contact-bottom">
             <div>
-              <a href="mailto:1427954145@qq.com">EMAIL</a>
+              <a href="mailto:1427954145@qq.com">QQ MAIL</a>
               <a href="tel:18250030358">PHONE</a>
             </div>
             <p>© 2026 QUE JIAWEI. DESIGNED WITH INTENTION.</p>
