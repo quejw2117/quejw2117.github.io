@@ -500,13 +500,11 @@ export default function Home() {
           muted
           loop
           playsInline
+          preload="auto"
           poster=""
           aria-hidden="true"
         >
-          <source
-            src="https://videos.pexels.com/video-files/29765099/12791129_1920_1080_30fps.mp4"
-            type="video/mp4"
-          />
+          <source src="/hero-background.mp4" type="video/mp4" />
         </video>
         <div className="hero-fallback" aria-hidden="true" />
         <div className="hero-shade" aria-hidden="true" />
