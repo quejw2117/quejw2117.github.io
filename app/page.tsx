@@ -104,7 +104,7 @@ export default function Home() {
         scaleY: 0.66,
         transformOrigin: "50% 100%",
       });
-      gsap.set(".hero-kicker, .hero-center > p, .hero-cta", {
+      gsap.set(".hero-kicker, .hero-center > p, .hero-cta, .hero-rail", {
         y: 34,
         autoAlpha: 0,
       });
@@ -196,7 +196,7 @@ export default function Home() {
           "-=0.76",
         )
         .to(
-          ".hero-kicker, .hero-center > p, .hero-cta",
+          ".hero-kicker, .hero-center > p, .hero-cta, .hero-rail",
           {
             y: 0,
             autoAlpha: 1,
@@ -536,6 +536,18 @@ export default function Home() {
             </a>
           </div>
 
+          <div className="hero-rail" aria-label="首屏浏览提示">
+            <span>VISUAL DESIGN · AIGC · BRAND SYSTEMS</span>
+            <div className="hero-rail-progress" aria-hidden="true">
+              <i>
+                <b />
+              </i>
+              <span>01 / 04</span>
+            </div>
+            <a href="#about">
+              SCROLL TO EXPLORE <span aria-hidden="true">↓</span>
+            </a>
+          </div>
         </div>
       </section>
 

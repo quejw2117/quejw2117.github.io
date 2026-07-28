@@ -300,7 +300,7 @@ a {
 }
 
 .hero-center {
-  width: min(760px, 100%);
+  width: min(960px, 100%);
   margin: clamp(90px, 14vh, 150px) auto 0;
   text-align: center;
 }
@@ -324,7 +324,7 @@ a {
 .hero h1 {
   margin: 28px 0 22px;
   color: #f5f5f0;
-  font-size: clamp(58px, 5vw, 92px);
+  font-size: clamp(64px, 5.9vw, 110px);
   font-weight: 520;
   line-height: 0.88;
   letter-spacing: -0.065em;
@@ -357,7 +357,7 @@ a {
 }
 
 .hero-cta {
-  margin-top: 25px;
+  margin-top: 34px;
   padding: 14px 18px;
   display: inline-flex;
   align-items: center;
@@ -376,6 +376,72 @@ a {
 .hero-cta:hover {
   border-color: var(--accent);
   background: var(--accent);
+}
+
+.hero-rail {
+  position: absolute;
+  right: 0;
+  bottom: 30px;
+  left: 0;
+  padding-top: 20px;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+  color: rgba(255, 255, 255, 0.58);
+  font-size: 8px;
+  letter-spacing: 0.16em;
+}
+
+.hero-rail-progress {
+  width: min(330px, 24vw);
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.hero-rail-progress > i {
+  position: relative;
+  height: 1px;
+  flex: 1;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.hero-rail-progress > i > b {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 44%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(201, 255, 74, 0.95),
+    transparent
+  );
+  animation: rail-travel 5.4s cubic-bezier(0.76, 0, 0.24, 1) infinite;
+}
+
+.hero-rail-progress > span {
+  color: rgba(255, 255, 255, 0.76);
+  font-family: "SFMono-Regular", Consolas, monospace;
+  letter-spacing: 0.08em;
+}
+
+.hero-rail > a {
+  justify-self: end;
+  color: rgba(255, 255, 255, 0.76);
+  transition: color 180ms ease;
+}
+
+.hero-rail > a:hover {
+  color: var(--accent);
+}
+
+.hero-rail > a span {
+  display: inline-block;
+  margin-left: 12px;
+  color: var(--accent);
+  animation: scroll-cue 2.8s ease-in-out infinite;
 }
 
 .section-space {
@@ -1104,6 +1170,28 @@ a.contact-item:hover {
   }
 }
 
+@keyframes rail-travel {
+  0% {
+    transform: translateX(-105%);
+  }
+
+  55%,
+  100% {
+    transform: translateX(235%);
+  }
+}
+
+@keyframes scroll-cue {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(4px);
+  }
+}
+
 @media (max-width: 1100px) {
   :root {
     --shell: min(100% - 48px, 1700px);
@@ -1127,6 +1215,10 @@ a.contact-item:hover {
 
   .hero-center {
     margin-top: clamp(80px, 12vh, 120px);
+  }
+
+  .hero-rail-progress {
+    width: min(230px, 28vw);
   }
 
   .about-grid,
@@ -1198,6 +1290,24 @@ a.contact-item:hover {
   .hero h1 {
     font-size: clamp(48px, 14vw, 72px);
     line-height: 0.9;
+  }
+
+  .hero-rail {
+    bottom: 20px;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 24px;
+  }
+
+  .hero-rail > span:first-child {
+    display: none;
+  }
+
+  .hero-rail-progress {
+    width: min(190px, 42vw);
+  }
+
+  .hero-rail > a {
+    font-size: 7px;
   }
 
   .section-heading--split {
