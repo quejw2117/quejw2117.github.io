@@ -61,18 +61,27 @@ const capabilities = [
 export default function Home() {
   return (
     <main>
+      <div className="promo-bar">
+        <span>PORTFOLIO 2026 · VISUAL DESIGN × AI CREATIVE</span>
+        <span>SHENZHEN, CHINA</span>
+      </div>
       <header className="site-header">
         <a className="brand-mark" href="#top" aria-label="返回首页">
-          J.W<span>/26</span>
+          QUE JIAWEI<span>/26</span>
         </a>
         <nav aria-label="主导航">
-          <a href="#about">关于</a>
-          <a href="#work">作品</a>
-          <a href="#ability">能力</a>
+          <a href="#work">SELECTED WORK</a>
+          <a href="#about">ABOUT</a>
+          <a href="#ability">CAPABILITIES</a>
         </nav>
-        <a className="contact-pill" href="mailto:1427954145@qq.com">
-          联系我 <span aria-hidden="true">↗</span>
-        </a>
+        <div className="header-actions">
+          <a className="header-mail" href="mailto:1427954145@qq.com">
+            EMAIL ME
+          </a>
+          <a className="contact-pill" href="#contact">
+            LET&apos;S TALK <span aria-hidden="true">↗</span>
+          </a>
+        </div>
       </header>
 
       <section className="hero" id="top">
@@ -95,30 +104,60 @@ export default function Home() {
         <div className="hero-grid" aria-hidden="true" />
 
         <div className="hero-content page-shell">
-          <div className="hero-kicker">
-            <span className="status-dot" />
-            SHENZHEN · AVAILABLE FOR SELECTED PROJECTS
-          </div>
-          <h1>
-            DESIGNING
-            <br />
-            <span>VISUAL</span> SYSTEMS
-            <br />
-            WITH <i>AI.</i>
-          </h1>
-          <div className="hero-bottom">
-            <p>
-              阙嘉炜，视觉设计师 / AI 设计师 / 品牌设计师。
+          <div className="hero-center">
+            <div className="hero-kicker">
+              <span className="status-dot" />
+              AVAILABLE FOR SELECTED PROJECTS
+            </div>
+            <h1>
+              Ideas become
               <br />
-              用视觉、影像与智能工作流，让创意规模化落地。
+              <span>visual systems.</span>
+            </h1>
+            <p>
+              视觉设计师 / AI 设计师 / 品牌设计师
+              <br />
+              用影像与智能工作流，让创意真正落地。
             </p>
-            <a className="scroll-cue" href="#about">
-              <span>SCROLL TO EXPLORE</span>
-              <b aria-hidden="true">↓</b>
+            <a className="hero-cta" href="#work">
+              VIEW SELECTED WORK <span aria-hidden="true">↘</span>
+            </a>
+          </div>
+
+          <div className="hero-showcase" aria-label="精选作品预览">
+            <a className="hero-work-card hero-work-card--left" href="#work">
+              <span className="hero-work-top">
+                <b>02</b>
+                <em>SOCIAL GROWTH</em>
+              </span>
+              <span className="hero-work-art hero-work-art--left" aria-hidden="true">
+                <i>100+</i>
+                <i>LEADS</i>
+              </span>
+            </a>
+            <a className="hero-work-card hero-work-card--main" href="#work">
+              <span className="hero-work-top">
+                <b>01</b>
+                <em>AIGC VIDEO SYSTEM</em>
+              </span>
+              <span className="hero-work-art hero-work-art--main" aria-hidden="true">
+                <i>VISUAL</i>
+                <i>WORKFLOW</i>
+                <small>STRATEGY · PROMPT · MOTION</small>
+              </span>
+            </a>
+            <a className="hero-work-card hero-work-card--right" href="#work">
+              <span className="hero-work-top">
+                <b>03</b>
+                <em>BRAND VISUAL</em>
+              </span>
+              <span className="hero-work-art hero-work-art--right" aria-hidden="true">
+                <i>96%</i>
+                <i>ACCURACY</i>
+              </span>
             </a>
           </div>
         </div>
-        <div className="hero-edge-note">PORTFOLIO · 2026</div>
       </section>
 
       <section className="about section-space" id="about">
