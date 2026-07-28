@@ -502,56 +502,7 @@ a {
 }
 
 .about-grid {
-  display: grid;
-  grid-template-columns: minmax(310px, 0.7fr) 1.3fr;
-  gap: clamp(60px, 8vw, 150px);
-  align-items: start;
-}
-
-.portrait-frame {
-  position: relative;
-  overflow: hidden;
-  aspect-ratio: 0.82;
-  background: #a7c7e6;
-}
-
-.portrait-frame::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(140deg, transparent 48%, rgba(201, 255, 74, 0.2));
-  mix-blend-mode: color;
-}
-
-.portrait-frame img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  filter: grayscale(0.92) contrast(1.12);
-  transform: scale(1.04);
-}
-
-.portrait-scan {
-  position: absolute;
-  z-index: 2;
-  inset: 0;
-  background: repeating-linear-gradient(
-    0deg,
-    transparent 0,
-    transparent 3px,
-    rgba(255, 255, 255, 0.08) 4px
-  );
-  pointer-events: none;
-}
-
-.portrait-meta {
-  display: flex;
-  justify-content: space-between;
-  padding-top: 14px;
-  color: #5c6067;
-  font-size: 9px;
-  letter-spacing: 0.13em;
+  display: block;
 }
 
 .about-copy .lead {
@@ -560,6 +511,11 @@ a {
   font-size: clamp(25px, 2.2vw, 40px);
   line-height: 1.45;
   letter-spacing: -0.035em;
+}
+
+.about-copy {
+  width: min(1120px, 100%);
+  margin-left: auto;
 }
 
 .about-copy > p:not(.lead) {
@@ -1090,10 +1046,6 @@ a {
 
   .project-card:nth-child(even) .project-visual {
     order: initial;
-  }
-
-  .portrait-wrap {
-    max-width: 520px;
   }
 
   .stats-grid,

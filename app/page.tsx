@@ -67,19 +67,19 @@ export default function Home() {
       </div>
       <header className="site-header">
         <a className="brand-mark" href="#top" aria-label="返回首页">
-          QUE JIAWEI<span>/26</span>
+          阙嘉炜<span>/26</span>
         </a>
         <nav aria-label="主导航">
-          <a href="#work">SELECTED WORK</a>
-          <a href="#about">ABOUT</a>
-          <a href="#ability">CAPABILITIES</a>
+          <a href="#work">精选项目</a>
+          <a href="#about">关于我</a>
+          <a href="#ability">专业能力</a>
         </nav>
         <div className="header-actions">
           <a className="header-mail" href="mailto:1427954145@qq.com">
-            EMAIL ME
+            邮箱联系
           </a>
           <a className="contact-pill" href="#contact">
-            LET&apos;S TALK <span aria-hidden="true">↗</span>
+            联系我 <span aria-hidden="true">↗</span>
           </a>
         </div>
       </header>
@@ -172,17 +172,6 @@ export default function Home() {
           </div>
 
           <div className="about-grid">
-            <div className="portrait-wrap">
-              <div className="portrait-frame">
-                <img src="/avatar.png" alt="阙嘉炜个人照片" />
-                <div className="portrait-scan" aria-hidden="true" />
-              </div>
-              <div className="portrait-meta">
-                <span>QUE JIAWEI</span>
-                <span>BASED IN SHENZHEN</span>
-              </div>
-            </div>
-
             <div className="about-copy">
               <p className="lead">
                 我拥有数字媒体艺术背景，工作横跨视觉创作、新媒体增长与
