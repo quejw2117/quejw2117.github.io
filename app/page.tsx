@@ -1,3 +1,9 @@
+"use client";
+
+import { useLayoutEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 const projects = [
   {
     index: "01",
@@ -59,8 +65,405 @@ const capabilities = [
 ];
 
 export default function Home() {
+  const rootRef = useRef<HTMLElement>(null);
+
+  useLayoutEffect(() => {
+    const root = rootRef.current;
+
+    if (!root) {
+      return;
+    }
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    const reducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+
+    if (reducedMotion) {
+      gsap.set(".opening-sequence", { display: "none" });
+      return;
+    }
+
+    document.body.classList.add("is-opening");
+
+    const context = gsap.context(() => {
+      const openingCount = root.querySelector<HTMLElement>(".opening-count");
+      const counter = { value: 0 };
+      const openingTimeline = gsap.timeline({
+        defaults: { ease: "power4.out" },
+        onComplete: () => {
+          document.body.classList.remove("is-opening");
+          gsap.set(".opening-sequence", { display: "none" });
+          ScrollTrigger.refresh();
+        },
+      });
+
+      gsap.set(".site-header, .promo-bar", { y: -34, autoAlpha: 0 });
+      gsap.set(".hero-title-line > span", {
+        yPercent: 118,
+        scaleX: 0.78,
+        scaleY: 0.66,
+        transformOrigin: "50% 100%",
+      });
+      gsap.set(".hero-kicker, .hero-center > p, .hero-cta", {
+        y: 34,
+        autoAlpha: 0,
+      });
+      gsap.set(".hero-work-card", {
+        y: 180,
+        scale: 0.84,
+        rotateX: 9,
+        autoAlpha: 0,
+        transformOrigin: "50% 100%",
+      });
+      gsap.set(".hero-video", { scale: 1.14 });
+
+      openingTimeline
+        .fromTo(
+          ".opening-index, .opening-name",
+          { y: 24, autoAlpha: 0 },
+          {
+            y: 0,
+            autoAlpha: 1,
+            duration: 0.8,
+            stagger: 0.08,
+            ease: "power3.out",
+          },
+        )
+        .to(
+          counter,
+          {
+            value: 100,
+            duration: 1.35,
+            ease: "power2.inOut",
+            onUpdate: () => {
+              if (openingCount) {
+                openingCount.textContent = `${Math.round(counter.value)
+                  .toString()
+                  .padStart(2, "0")} / 100`;
+              }
+            },
+          },
+          0.12,
+        )
+        .to(
+          ".opening-copy",
+          {
+            y: -28,
+            autoAlpha: 0,
+            duration: 0.45,
+            ease: "power3.in",
+          },
+          "+=0.08",
+        )
+        .to(
+          ".opening-panel",
+          {
+            scaleY: 0,
+            transformOrigin: "50% 0%",
+            duration: 1.3,
+            stagger: { each: 0.075, from: "end" },
+            ease: "expo.inOut",
+          },
+          "-=0.14",
+        )
+        .to(
+          ".opening-sequence",
+          { autoAlpha: 0, pointerEvents: "none", duration: 0.2 },
+          "-=0.18",
+        )
+        .to(
+          ".promo-bar, .site-header",
+          {
+            y: 0,
+            autoAlpha: 1,
+            duration: 0.9,
+            stagger: 0.07,
+            ease: "power3.out",
+          },
+          "-=0.65",
+        )
+        .to(
+          ".hero-title-line > span",
+          {
+            yPercent: 0,
+            scaleX: 1,
+            scaleY: 1,
+            duration: 1.45,
+            stagger: 0.12,
+            ease: "power4.out",
+          },
+          "-=0.76",
+        )
+        .to(
+          ".hero-kicker, .hero-center > p, .hero-cta",
+          {
+            y: 0,
+            autoAlpha: 1,
+            duration: 0.9,
+            stagger: 0.1,
+            ease: "power3.out",
+          },
+          "-=1",
+        )
+        .to(
+          ".hero-work-card",
+          {
+            y: 0,
+            scale: 1,
+            rotateX: 0,
+            autoAlpha: 1,
+            duration: 1.35,
+            stagger: 0.14,
+            ease: "power4.out",
+          },
+          "-=0.72",
+        )
+        .to(
+          ".hero-video",
+          { scale: 1, duration: 2.2, ease: "power3.out" },
+          "-=1.5",
+        );
+
+      gsap.utils.toArray<HTMLElement>(".section-display").forEach((display) => {
+        gsap.fromTo(
+          display.querySelector("span"),
+          {
+            xPercent: -18,
+            scaleX: 0.7,
+            clipPath: "inset(0 100% 0 0)",
+            transformOrigin: "0% 50%",
+          },
+          {
+            xPercent: 0,
+            scaleX: 1,
+            clipPath: "inset(0 0% 0 0)",
+            duration: 1.55,
+            ease: "power4.out",
+            scrollTrigger: {
+              trigger: display,
+              start: "top 86%",
+              once: true,
+            },
+          },
+        );
+      });
+
+      gsap.utils
+        .toArray<HTMLElement>(".section-heading")
+        .forEach((heading) => {
+          gsap.fromTo(
+            Array.from(heading.children),
+            { y: 92, autoAlpha: 0, clipPath: "inset(0 0 100% 0)" },
+            {
+              y: 0,
+              autoAlpha: 1,
+              clipPath: "inset(0 0 0% 0)",
+              duration: 1.2,
+              stagger: 0.12,
+              ease: "power4.out",
+              scrollTrigger: {
+                trigger: heading,
+                start: "top 82%",
+                once: true,
+              },
+            },
+          );
+        });
+
+      gsap.fromTo(
+        ".about-copy > .lead, .about-copy > p:not(.lead), .experience-list article, .contact-line",
+        { y: 80, autoAlpha: 0 },
+        {
+          y: 0,
+          autoAlpha: 1,
+          duration: 1.05,
+          stagger: 0.11,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: ".about-copy",
+            start: "top 78%",
+            once: true,
+          },
+        },
+      );
+
+      gsap.fromTo(
+        ".stats-grid > div",
+        {
+          y: 110,
+          scaleY: 0.82,
+          autoAlpha: 0,
+          transformOrigin: "50% 100%",
+        },
+        {
+          y: 0,
+          scaleY: 1,
+          autoAlpha: 1,
+          duration: 1.15,
+          stagger: 0.12,
+          ease: "power4.out",
+          scrollTrigger: {
+            trigger: ".stats-grid",
+            start: "top 84%",
+            once: true,
+          },
+        },
+      );
+
+      gsap.utils.toArray<HTMLElement>(".project-card").forEach((card, index) => {
+        const visual = card.querySelector<HTMLElement>(".project-visual");
+        const info = card.querySelector<HTMLElement>(".project-info");
+        const visualCore = card.querySelector<HTMLElement>(".visual-core");
+
+        if (visual) {
+          gsap.fromTo(
+            visual,
+            {
+              y: 130,
+              scale: 0.92,
+              clipPath: "inset(14% 0 14% 0)",
+              transformOrigin: "50% 50%",
+            },
+            {
+              y: 0,
+              scale: 1,
+              clipPath: "inset(0% 0 0% 0)",
+              duration: 1.55,
+              ease: "power4.out",
+              scrollTrigger: {
+                trigger: card,
+                start: "top 80%",
+                once: true,
+              },
+            },
+          );
+        }
+
+        if (info) {
+          gsap.fromTo(
+            Array.from(info.children),
+            { x: index % 2 === 0 ? 70 : -70, autoAlpha: 0 },
+            {
+              x: 0,
+              autoAlpha: 1,
+              duration: 1.05,
+              stagger: 0.12,
+              ease: "power3.out",
+              scrollTrigger: {
+                trigger: card,
+                start: "top 72%",
+                once: true,
+              },
+            },
+          );
+        }
+
+        if (visualCore && window.innerWidth > 760) {
+          gsap.fromTo(
+            visualCore,
+            { yPercent: -7, scale: 1.05 },
+            {
+              yPercent: 7,
+              scale: 1,
+              ease: "none",
+              scrollTrigger: {
+                trigger: card,
+                start: "top bottom",
+                end: "bottom top",
+                scrub: 1.4,
+              },
+            },
+          );
+        }
+      });
+
+      gsap.fromTo(
+        ".capability-grid article",
+        {
+          y: 120,
+          scaleY: 0.84,
+          clipPath: "inset(12% 0 0 0)",
+          autoAlpha: 0,
+          transformOrigin: "50% 100%",
+        },
+        {
+          y: 0,
+          scaleY: 1,
+          clipPath: "inset(0% 0 0 0)",
+          autoAlpha: 1,
+          duration: 1.25,
+          stagger: 0.13,
+          ease: "power4.out",
+          scrollTrigger: {
+            trigger: ".capability-grid",
+            start: "top 84%",
+            once: true,
+          },
+        },
+      );
+
+      gsap.fromTo(
+        ".contact-center > p",
+        { y: 48, autoAlpha: 0 },
+        {
+          y: 0,
+          autoAlpha: 1,
+          duration: 0.9,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: ".contact-center",
+            start: "top 78%",
+            once: true,
+          },
+        },
+      );
+
+      gsap.fromTo(
+        ".contact-link-mask > span",
+        {
+          yPercent: 120,
+          scaleX: 0.72,
+          scaleY: 0.68,
+          transformOrigin: "50% 100%",
+        },
+        {
+          yPercent: 0,
+          scaleX: 1,
+          scaleY: 1,
+          duration: 1.55,
+          ease: "power4.out",
+          scrollTrigger: {
+            trigger: ".contact-center",
+            start: "top 72%",
+            once: true,
+          },
+        },
+      );
+    }, root);
+
+    return () => {
+      document.body.classList.remove("is-opening");
+      context.revert();
+    };
+  }, []);
+
   return (
-    <main>
+    <main ref={rootRef}>
+      <div className="opening-sequence" aria-hidden="true">
+        <div className="opening-panels">
+          {Array.from({ length: 5 }, (_, index) => (
+            <span className="opening-panel" key={index} />
+          ))}
+        </div>
+        <div className="opening-copy">
+          <span className="opening-index">PORTFOLIO / 2026</span>
+          <strong className="opening-name">QUE JIAWEI</strong>
+          <span className="opening-count">00 / 100</span>
+        </div>
+      </div>
+
       <div className="promo-bar">
         <span>PORTFOLIO 2026 · VISUAL DESIGN × AI CREATIVE</span>
         <span>SHENZHEN, CHINA</span>
@@ -110,9 +513,12 @@ export default function Home() {
               AVAILABLE FOR SELECTED PROJECTS
             </div>
             <h1>
-              Ideas become
-              <br />
-              <span>visual systems.</span>
+              <span className="hero-title-line">
+                <span>Ideas become</span>
+              </span>
+              <span className="hero-title-line hero-title-line--serif">
+                <span>visual systems.</span>
+              </span>
             </h1>
             <p>
               视觉设计师 / AI 设计师 / 品牌设计师
@@ -162,6 +568,9 @@ export default function Home() {
 
       <section className="about section-space" id="about">
         <div className="page-shell">
+          <div className="section-display section-display--dark" aria-hidden="true">
+            <span>PROFILE</span>
+          </div>
           <div className="section-heading">
             <span>01 / PROFILE</span>
             <h2>
@@ -236,6 +645,9 @@ export default function Home() {
 
       <section className="work section-space" id="work">
         <div className="page-shell">
+          <div className="section-display" aria-hidden="true">
+            <span>SELECTED WORK</span>
+          </div>
           <div className="section-heading section-heading--split">
             <div>
               <span>02 / SELECTED WORK</span>
@@ -284,6 +696,9 @@ export default function Home() {
 
       <section className="abilities section-space" id="ability">
         <div className="page-shell">
+          <div className="section-display" aria-hidden="true">
+            <span>CAPABILITIES</span>
+          </div>
           <div className="section-heading section-heading--split">
             <div>
               <span>03 / CAPABILITIES</span>
@@ -318,15 +733,20 @@ export default function Home() {
       <footer className="contact-section" id="contact">
         <div className="contact-noise" aria-hidden="true" />
         <div className="page-shell contact-inner">
+          <div className="section-display section-display--contact" aria-hidden="true">
+            <span>CONTACT</span>
+          </div>
           <div className="contact-top">
             <span>04 / CONTACT</span>
             <span>LET&apos;S CREATE SOMETHING MEANINGFUL.</span>
           </div>
           <div className="contact-center">
             <p>有一个值得被看见的想法？</p>
-            <a href="mailto:1427954145@qq.com">
-              LET&apos;S TALK
-              <span aria-hidden="true">↗</span>
+            <a className="contact-link-mask" href="mailto:1427954145@qq.com">
+              <span>
+                LET&apos;S TALK
+                <i aria-hidden="true">↗</i>
+              </span>
             </a>
           </div>
           <div className="contact-bottom">
