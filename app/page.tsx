@@ -66,8 +66,8 @@ export default function Home() {
         <span>SHENZHEN, CHINA</span>
       </div>
       <header className="site-header">
-        <a className="brand-mark" href="#top" aria-label="返回首页">
-          阙嘉炜<span>/26</span>
+        <a className="brand-mark" href="#top" aria-label="Back to home">
+          QUE JIAWEI<span>/26</span>
         </a>
         <nav aria-label="主导航">
           <a href="#work">精选项目</a>
