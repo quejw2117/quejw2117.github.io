@@ -93,8 +93,6 @@ export default function Home() {
       const openingTimeline = gsap.timeline({
         defaults: { ease: "power4.out" },
         onComplete: () => {
-          document.body.classList.remove("is-opening");
-          gsap.set(".opening-sequence", { display: "none" });
           ScrollTrigger.refresh();
         },
       });
@@ -170,7 +168,15 @@ export default function Home() {
         )
         .to(
           ".opening-sequence",
-          { autoAlpha: 0, pointerEvents: "none", duration: 0.2 },
+          {
+            autoAlpha: 0,
+            pointerEvents: "none",
+            duration: 0.2,
+            onComplete: () => {
+              document.body.classList.remove("is-opening");
+              gsap.set(".opening-sequence", { display: "none" });
+            },
+          },
           "-=0.18",
         )
         .to(
