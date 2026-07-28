@@ -3,6 +3,7 @@
 import { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import SpecularButton from "./components/SpecularButton";
 
 const projects = [
   {
@@ -535,7 +536,20 @@ export default function Home() {
           </div>
 
           <div className="hero-showcase" aria-label="精选作品预览">
-            <a className="hero-work-card hero-work-card--left" href="#work">
+            <SpecularButton
+              className="hero-work-card hero-work-card--left"
+              href="#work"
+              ariaLabel="查看社交媒体增长项目"
+              radius={0}
+              lineColor="#eaffb5"
+              baseColor="#454b54"
+              intensity={1.35}
+              shineSize={16}
+              shineFade={34}
+              thickness={1.15}
+              speed={0.18}
+              proximity={380}
+            >
               <span className="hero-work-top">
                 <b>02</b>
                 <em>SOCIAL GROWTH</em>
@@ -544,8 +558,21 @@ export default function Home() {
                 <i>100+</i>
                 <i>LEADS</i>
               </span>
-            </a>
-            <a className="hero-work-card hero-work-card--main" href="#work">
+            </SpecularButton>
+            <SpecularButton
+              className="hero-work-card hero-work-card--main"
+              href="#work"
+              ariaLabel="查看 AIGC 视频工作流项目"
+              radius={0}
+              lineColor="#f4ffd7"
+              baseColor="#4c5360"
+              intensity={1.5}
+              shineSize={18}
+              shineFade={36}
+              thickness={1.25}
+              speed={0.16}
+              proximity={420}
+            >
               <span className="hero-work-top">
                 <b>01</b>
                 <em>AIGC VIDEO SYSTEM</em>
@@ -555,8 +582,21 @@ export default function Home() {
                 <i>WORKFLOW</i>
                 <small>STRATEGY · PROMPT · MOTION</small>
               </span>
-            </a>
-            <a className="hero-work-card hero-work-card--right" href="#work">
+            </SpecularButton>
+            <SpecularButton
+              className="hero-work-card hero-work-card--right"
+              href="#work"
+              ariaLabel="查看品牌视觉项目"
+              radius={0}
+              lineColor="#eaffb5"
+              baseColor="#454b54"
+              intensity={1.35}
+              shineSize={16}
+              shineFade={34}
+              thickness={1.15}
+              speed={0.18}
+              proximity={380}
+            >
               <span className="hero-work-top">
                 <b>03</b>
                 <em>BRAND VISUAL</em>
@@ -565,7 +605,7 @@ export default function Home() {
                 <i>96%</i>
                 <i>ACCURACY</i>
               </span>
-            </a>
+            </SpecularButton>
           </div>
         </div>
       </section>
