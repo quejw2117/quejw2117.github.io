@@ -64,6 +64,37 @@ const capabilities = [
   },
 ];
 
+const journalClips = [
+  {
+    index: "01",
+    type: "CITY VLOG",
+    title: "城市漫游",
+    meta: "日常观察 / 街头影像",
+    className: "journal-poster journal-poster--city",
+  },
+  {
+    index: "02",
+    type: "LIFE LOG",
+    title: "日常切片",
+    meta: "生活记录 / 随手拍摄",
+    className: "journal-poster journal-poster--daily",
+  },
+  {
+    index: "03",
+    type: "ON THE ROAD",
+    title: "旅途与现场",
+    meta: "旅行 VLOG / 沿途片段",
+    className: "journal-poster journal-poster--road",
+  },
+  {
+    index: "04",
+    type: "PERSONAL ARCHIVE",
+    title: "更多生活记录",
+    meta: "持续更新中",
+    className: "journal-poster journal-poster--archive",
+  },
+];
+
 export default function Home() {
   const rootRef = useRef<HTMLElement>(null);
 
@@ -366,6 +397,52 @@ export default function Home() {
       });
 
       gsap.fromTo(
+        ".journal-card",
+        {
+          y: 120,
+          scale: 0.94,
+          clipPath: "inset(12% 0 12% 0)",
+          autoAlpha: 0,
+        },
+        {
+          y: 0,
+          scale: 1,
+          clipPath: "inset(0% 0 0% 0)",
+          autoAlpha: 1,
+          duration: 1.45,
+          stagger: 0.13,
+          ease: "power4.out",
+          scrollTrigger: {
+            trigger: ".journal-grid",
+            start: "top 82%",
+            once: true,
+          },
+        },
+      );
+
+      if (window.innerWidth > 760) {
+        gsap.utils
+          .toArray<HTMLElement>(".journal-poster-inner")
+          .forEach((poster) => {
+            gsap.fromTo(
+              poster,
+              { yPercent: -5, scale: 1.08 },
+              {
+                yPercent: 5,
+                scale: 1,
+                ease: "none",
+                scrollTrigger: {
+                  trigger: poster,
+                  start: "top bottom",
+                  end: "bottom top",
+                  scrub: 1.5,
+                },
+              },
+            );
+          });
+      }
+
+      gsap.fromTo(
         ".capability-grid article",
         {
           y: 120,
@@ -481,7 +558,8 @@ export default function Home() {
           QUE JIAWEI<span>/26</span>
         </a>
         <nav aria-label="主导航">
-          <a href="#work">精选项目</a>
+          <a href="#work">工作流搭建</a>
+          <a href="#journal">生活影像</a>
           <a href="#about">关于我</a>
           <a href="#ability">专业能力</a>
         </nav>
@@ -542,7 +620,7 @@ export default function Home() {
               <i>
                 <b />
               </i>
-              <span>01 / 04</span>
+              <span>01 / 05</span>
             </div>
             <a href="#about">
               SCROLL TO EXPLORE <span aria-hidden="true">↓</span>
@@ -566,6 +644,20 @@ export default function Home() {
           </div>
 
           <div className="about-grid">
+            <figure className="profile-portrait">
+              <div className="profile-portrait-frame">
+                <img
+                  src="/avatar-cartoon.png"
+                  alt="阙嘉炜的卡通形象"
+                  width="1254"
+                  height="1254"
+                />
+              </div>
+              <figcaption>
+                <span>QUE JIAWEI</span>
+                <span>VISUAL / AI DESIGNER</span>
+              </figcaption>
+            </figure>
             <div className="about-copy">
               <p className="lead">
                 我拥有数字媒体艺术背景，工作横跨视觉创作、新媒体增长与
@@ -589,6 +681,13 @@ export default function Home() {
                   <div>
                     <h3>新媒体运营</h3>
                     <p>国创文化（深圳）科技有限公司</p>
+                  </div>
+                </article>
+                <article>
+                  <time>2024.07 — 2025.10</time>
+                  <div>
+                    <h3>自主创业 / 淘宝服装零售</h3>
+                    <p>淘宝店铺运营 · 服装销售 / 视觉呈现 / 社交媒体宣传与发布</p>
                   </div>
                 </article>
                 <article>
@@ -632,12 +731,12 @@ export default function Home() {
           <div className="section-heading section-heading--split">
             <div>
               <span>02 / SELECTED WORK</span>
-              <h2>精选项目</h2>
+              <h2>工作流搭建</h2>
             </div>
             <p>
-              这些项目展示了我如何连接视觉、内容与工作流。
+              这些项目展示了我如何把视觉、内容与 AIGC 整理为可复用的生产系统。
               <br />
-              当前为基础版项目封面，后续可替换为你的真实案例素材。
+              当前为基础版项目封面，后续可替换为真实案例素材。
             </p>
           </div>
 
@@ -675,6 +774,54 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="journal section-space" id="journal">
+        <div className="page-shell">
+          <div
+            className="section-display section-display--journal"
+            aria-hidden="true"
+          >
+            <span>LIFE IN MOTION</span>
+          </div>
+          <div className="section-heading section-heading--split">
+            <div>
+              <span>03 / LIFE ARCHIVE</span>
+              <h2>生活影像</h2>
+            </div>
+            <p>
+              收藏镜头之外的日常：VLOG、旅途与那些值得被留下的生活片段。
+              <br />
+              视频位置已预留，后续可直接替换为你的真实影像。
+            </p>
+          </div>
+
+          <div className="journal-grid">
+            {journalClips.map((clip) => (
+              <article className="journal-card" key={clip.index}>
+                <div className={clip.className}>
+                  <div className="journal-poster-inner" aria-hidden="true">
+                    <span />
+                    <span />
+                    <span />
+                  </div>
+                  <span className="journal-index">{clip.index}</span>
+                  <span className="journal-pending">待添加视频</span>
+                  <span className="journal-play" aria-hidden="true">
+                    ▶
+                  </span>
+                </div>
+                <div className="journal-caption">
+                  <div>
+                    <span>{clip.type}</span>
+                    <h3>{clip.title}</h3>
+                  </div>
+                  <p>{clip.meta}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="abilities section-space" id="ability">
         <div className="page-shell">
           <div className="section-display" aria-hidden="true">
@@ -682,7 +829,7 @@ export default function Home() {
           </div>
           <div className="section-heading section-heading--split">
             <div>
-              <span>03 / CAPABILITIES</span>
+              <span>04 / CAPABILITIES</span>
               <h2>
                 一个人，
                 <br />
@@ -718,7 +865,7 @@ export default function Home() {
             <span>CONTACT</span>
           </div>
           <div className="contact-top">
-            <span>04 / CONTACT</span>
+            <span>05 / CONTACT</span>
             <span>LET&apos;S CREATE SOMETHING MEANINGFUL.</span>
           </div>
           <div className="contact-center">
