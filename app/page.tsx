@@ -879,10 +879,16 @@ export default function Home() {
           </div>
           <div className="contact-directory">
             <div className="contact-list" aria-label="联系方式">
-              <div className="contact-item contact-item--pending">
+              <a
+                className="contact-item"
+                href="https://github.com/quejw2117"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <span>GITHUB</span>
-                <strong>待补充链接</strong>
-              </div>
+                <strong>github.com/quejw2117</strong>
+                <i aria-hidden="true">↗</i>
+              </a>
               <div className="contact-item contact-item--pending">
                 <span>WECHAT</span>
                 <strong>待补充微信号</strong>
