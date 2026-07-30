@@ -929,10 +929,6 @@ a {
   grid-column: span 7;
 }
 
-.journal-card:nth-child(5) {
-  grid-column: 1 / -1;
-}
-
 .journal-poster {
   position: relative;
   aspect-ratio: 16 / 10;
@@ -944,10 +940,6 @@ a {
 .journal-card:nth-child(2) .journal-poster,
 .journal-card:nth-child(3) .journal-poster {
   aspect-ratio: 4 / 5;
-}
-
-.journal-card:nth-child(5) .journal-poster {
-  aspect-ratio: 21 / 8;
 }
 
 .journal-poster-inner {
@@ -1564,21 +1556,12 @@ a.contact-item:hover {
   .journal-card,
   .journal-card:nth-child(2),
   .journal-card:nth-child(3),
-  .journal-card:nth-child(4),
-  .journal-card:nth-child(5) {
+  .journal-card:nth-child(4) {
     grid-column: span 6;
   }
 
   .journal-card .journal-poster {
     aspect-ratio: 4 / 5;
-  }
-
-  .journal-card:nth-child(5) {
-    grid-column: 1 / -1;
-  }
-
-  .journal-card:nth-child(5) .journal-poster {
-    aspect-ratio: 16 / 8;
   }
 
   .project-card:nth-child(even) .project-visual {
@@ -1721,16 +1704,11 @@ a.contact-item:hover {
   .journal-card,
   .journal-card:nth-child(2),
   .journal-card:nth-child(3),
-  .journal-card:nth-child(4),
-  .journal-card:nth-child(5) {
+  .journal-card:nth-child(4) {
     grid-column: auto;
   }
 
   .journal-card .journal-poster {
-    aspect-ratio: 4 / 5;
-  }
-
-  .journal-card:nth-child(5) .journal-poster {
     aspect-ratio: 4 / 5;
   }
 

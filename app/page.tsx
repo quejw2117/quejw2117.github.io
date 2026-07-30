@@ -74,10 +74,10 @@ const journalClips = [
   },
   {
     index: "02",
-    type: "LIFE LOG",
-    title: "日常切片",
-    meta: "生活记录 / 随手拍摄",
-    className: "journal-poster journal-poster--daily",
+    type: "AIGC VIDEO",
+    title: "AIGC 视频制作",
+    meta: "个人制作 / AI 生成影像",
+    className: "journal-poster journal-poster--aigc",
   },
   {
     index: "03",
@@ -92,13 +92,6 @@ const journalClips = [
     title: "更多生活记录",
     meta: "持续更新中",
     className: "journal-poster journal-poster--archive",
-  },
-  {
-    index: "05",
-    type: "AIGC MOTION STUDY",
-    title: "AIGC 影像实验",
-    meta: "个人制作 / AI 生成影像",
-    className: "journal-poster journal-poster--aigc",
   },
 ];
 
