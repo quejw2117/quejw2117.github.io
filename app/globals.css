@@ -948,6 +948,25 @@ a {
   overflow: hidden;
 }
 
+.journal-cover {
+  width: 114%;
+  height: 114%;
+  display: block;
+  object-fit: cover;
+  object-position: center 42%;
+}
+
+.journal-poster--has-cover::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, rgba(5, 6, 8, 0.34), transparent 26%),
+    linear-gradient(0deg, rgba(5, 6, 8, 0.22), transparent 34%);
+}
+
 .journal-poster-inner::before,
 .journal-poster-inner::after {
   content: "";
@@ -1421,6 +1440,27 @@ a.contact-item:hover {
   margin-top: 7px;
   color: #777c84;
   font-size: 10px;
+}
+
+.qr-placeholder--filled {
+  min-height: 310px;
+  padding: 0;
+  background: #fff;
+}
+
+.qr-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+  background: #fff;
+}
+
+.qr-placeholder--filled .qr-corner {
+  z-index: 2;
+  border-color: rgba(16, 17, 20, 0.72);
 }
 
 .qr-corner {

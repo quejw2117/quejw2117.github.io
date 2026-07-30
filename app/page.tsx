@@ -77,7 +77,9 @@ const journalClips = [
     type: "AIGC VIDEO",
     title: "AIGC 视频制作",
     meta: "个人制作 / AI 生成影像",
-    className: "journal-poster journal-poster--aigc",
+    className:
+      "journal-poster journal-poster--aigc journal-poster--has-cover",
+    cover: "/aigc-video-cover.jpg",
   },
   {
     index: "03",
@@ -799,13 +801,23 @@ export default function Home() {
             {journalClips.map((clip) => (
               <article className="journal-card" key={clip.index}>
                 <div className={clip.className}>
-                  <div className="journal-poster-inner" aria-hidden="true">
-                    <span />
-                    <span />
-                    <span />
-                  </div>
+                  {"cover" in clip ? (
+                    <img
+                      className="journal-poster-inner journal-cover"
+                      src={clip.cover}
+                      alt={`${clip.title}封面`}
+                    />
+                  ) : (
+                    <div className="journal-poster-inner" aria-hidden="true">
+                      <span />
+                      <span />
+                      <span />
+                    </div>
+                  )}
                   <span className="journal-index">{clip.index}</span>
-                  <span className="journal-pending">待添加视频</span>
+                  <span className="journal-pending">
+                    {"cover" in clip ? "视频封面" : "待添加视频"}
+                  </span>
                   <span className="journal-play" aria-hidden="true">
                     ▶
                   </span>
@@ -890,33 +902,42 @@ export default function Home() {
                 <strong>github.com/quejw2117</strong>
                 <i aria-hidden="true">↗</i>
               </a>
-              <div className="contact-item contact-item--pending">
+              <div className="contact-item">
                 <span>WECHAT</span>
-                <strong>待补充微信号</strong>
+                <strong>Mr_QUEJW</strong>
               </div>
               <a className="contact-item" href="mailto:1427954145@qq.com">
                 <span>QQ / EMAIL</span>
                 <strong>1427954145@qq.com</strong>
                 <i aria-hidden="true">↗</i>
               </a>
-              <div className="contact-item contact-item--pending">
+              <a
+                className="contact-item"
+                href="mailto:quejw2117@gmail.com"
+              >
                 <span>GOOGLE MAIL</span>
-                <strong>待补充 Gmail</strong>
-              </div>
+                <strong>quejw2117@gmail.com</strong>
+                <i aria-hidden="true">↗</i>
+              </a>
               <a className="contact-item" href="tel:18250030358">
                 <span>PHONE</span>
                 <strong>182 5003 0358</strong>
                 <i aria-hidden="true">↗</i>
               </a>
             </div>
-            <div className="qr-placeholder" aria-label="个人二维码预留位置">
+            <div
+              className="qr-placeholder qr-placeholder--filled"
+              aria-label="阙嘉炜的微信二维码"
+            >
+              <img
+                className="qr-image"
+                src="/wechat-qr.jpg"
+                alt="阙嘉炜的微信二维码，扫码添加好友"
+              />
               <span className="qr-corner qr-corner--tl" />
               <span className="qr-corner qr-corner--tr" />
               <span className="qr-corner qr-corner--bl" />
               <span className="qr-corner qr-corner--br" />
-              <b aria-hidden="true">＋</b>
-              <span>PERSONAL QR</span>
-              <small>个人二维码预留位置</small>
             </div>
           </div>
           <div className="contact-bottom">
