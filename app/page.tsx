@@ -93,6 +93,13 @@ const journalClips = [
     meta: "持续更新中",
     className: "journal-poster journal-poster--archive",
   },
+  {
+    index: "05",
+    type: "AIGC MOTION STUDY",
+    title: "AIGC 影像实验",
+    meta: "个人制作 / AI 生成影像",
+    className: "journal-poster journal-poster--aigc",
+  },
 ];
 
 export default function Home() {
@@ -559,7 +566,7 @@ export default function Home() {
         </a>
         <nav aria-label="主导航">
           <a href="#work">工作流搭建</a>
-          <a href="#journal">生活影像</a>
+          <a href="#journal">兴趣影像</a>
           <a href="#about">关于我</a>
           <a href="#ability">专业能力</a>
         </nav>
@@ -780,17 +787,18 @@ export default function Home() {
             className="section-display section-display--journal"
             aria-hidden="true"
           >
-            <span>LIFE IN MOTION</span>
+            <span>INTEREST IN MOTION</span>
           </div>
           <div className="section-heading section-heading--split">
             <div>
-              <span>03 / LIFE ARCHIVE</span>
-              <h2>生活影像</h2>
+              <span>03 / INTEREST ARCHIVE</span>
+              <h2>兴趣影像</h2>
             </div>
             <p>
-              收藏镜头之外的日常：VLOG、旅途与那些值得被留下的生活片段。
+              收藏镜头之外的兴趣：VLOG、旅途、生活片段与个人制作的 AIGC
+              影像实验。
               <br />
-              视频位置已预留，后续可直接替换为你的真实影像。
+              视频位置已预留，后续可直接替换为你的真实作品。
             </p>
           </div>
 
