@@ -16,8 +16,7 @@ const projects = [
     metric: "4 STEP WORKFLOW",
     className:
       "project-visual project-visual--signal project-visual--with-media",
-    cover: "/workflow-system.png",
-    detail: "/workflow-tool-ui.png",
+    cover: "/workflow-tool-ui.png",
   },
   {
     index: "02",
@@ -28,16 +27,6 @@ const projects = [
     tags: ["Content Strategy", "Campaign", "Growth"],
     metric: "累计获客 100+",
     className: "project-visual project-visual--orbit",
-  },
-  {
-    index: "03",
-    type: "VISUAL EDUCATION",
-    title: "「手绘技巧」\n视觉内容系列",
-    description:
-      "从内容栏目、课程视觉到 PS / Procreate 素材，建立统一且具有辨识度的美术教育内容系统。",
-    tags: ["Art Direction", "Editorial", "Illustration"],
-    metric: "单篇阅读 5,000+",
-    className: "project-visual project-visual--editorial",
   },
 ];
 
@@ -759,14 +748,6 @@ export default function Home() {
                           src={project.cover}
                           alt=""
                         />
-                        {"detail" in project ? (
-                          <figure className="project-detail-shot">
-                            <img src={project.detail} alt="" />
-                            <figcaption>
-                              LIVE SYSTEM / PRODUCT REPLICATION
-                            </figcaption>
-                          </figure>
-                        ) : null}
                       </div>
                     ) : (
                       <>
