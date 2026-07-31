@@ -8,13 +8,16 @@ import SpecularLink from "./components/SpecularLink";
 const projects = [
   {
     index: "01",
-    type: "AIGC VIDEO SYSTEM",
-    title: "跨境电商 AIGC\n内容生产系统",
+    type: "AI VIDEO REPLICATION SYSTEM",
+    title: "AI 商品视频复刻\n工作流系统",
     description:
-      "为家居、节日礼品、园艺等 8 大品类搭建从分镜脚本、视觉锚点到批量成片的标准化工作流。",
-    tags: ["Creative Direction", "Prompt System", "Video"],
-    metric: "交付周期 -75%",
-    className: "project-visual project-visual--signal",
+      "从参考视频解析、分镜确认、商品替换到 Seedance 成片，将多模型协作整理为可重复执行的生产流程。",
+    tags: ["Gemini", "Seedream", "Seedance 2.0"],
+    metric: "4 STEP WORKFLOW",
+    className:
+      "project-visual project-visual--signal project-visual--with-media",
+    cover: "/workflow-system.png",
+    detail: "/workflow-tool-ui.png",
   },
   {
     index: "02",
@@ -739,7 +742,7 @@ export default function Home() {
             <p>
               这些项目展示了我如何把视觉、内容与 AIGC 整理为可复用的生产系统。
               <br />
-              当前为基础版项目封面，后续可替换为真实案例素材。
+              从系统结构到真实工具界面，呈现工作流如何被设计并最终落地。
             </p>
           </div>
 
@@ -749,9 +752,29 @@ export default function Home() {
                 <div className={project.className}>
                   <span className="project-index">{project.index}</span>
                   <div className="visual-core" aria-hidden="true">
-                    <span />
-                    <span />
-                    <span />
+                    {"cover" in project ? (
+                      <div className="project-media">
+                        <img
+                          className="project-cover"
+                          src={project.cover}
+                          alt=""
+                        />
+                        {"detail" in project ? (
+                          <figure className="project-detail-shot">
+                            <img src={project.detail} alt="" />
+                            <figcaption>
+                              LIVE SYSTEM / PRODUCT REPLICATION
+                            </figcaption>
+                          </figure>
+                        ) : null}
+                      </div>
+                    ) : (
+                      <>
+                        <span />
+                        <span />
+                        <span />
+                      </>
+                    )}
                   </div>
                   <span className="project-metric">{project.metric}</span>
                 </div>

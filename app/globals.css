@@ -814,6 +814,15 @@ a {
     linear-gradient(140deg, #111525, #07080b 68%);
 }
 
+.project-visual--with-media {
+  background: #07090d;
+}
+
+.project-visual--with-media::before,
+.project-visual--with-media::after {
+  display: none;
+}
+
 .project-visual--signal::before {
   inset: 8%;
   border: 1px solid rgba(255, 255, 255, 0.15);
@@ -914,6 +923,62 @@ a {
   display: grid;
   place-items: center;
   will-change: transform;
+}
+
+.project-media {
+  position: absolute;
+  inset: clamp(14px, 1.5vw, 24px);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: #080a0e;
+}
+
+.project-cover {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.project-detail-shot {
+  position: absolute;
+  right: clamp(14px, 2vw, 34px);
+  bottom: clamp(14px, 2vw, 34px);
+  width: min(44%, 560px);
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.34);
+  background: #08090d;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.62);
+  transition:
+    width 850ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 850ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.project-detail-shot img {
+  width: 100%;
+  display: block;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.project-detail-shot figcaption {
+  padding: 10px 12px;
+  color: #b8bbc1;
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+  font-family: "SFMono-Regular", Consolas, monospace;
+  font-size: 8px;
+  letter-spacing: 0.12em;
+}
+
+.project-visual--with-media:hover .project-cover {
+  transform: scale(1.025);
+}
+
+.project-visual--with-media:hover .project-detail-shot {
+  width: min(49%, 610px);
+  transform: translate3d(-8px, -8px, 0);
 }
 
 .project-visual--signal .visual-core span {
@@ -1890,6 +1955,20 @@ a.contact-item:hover {
 
   .project-visual {
     min-height: 480px;
+  }
+
+  .project-media {
+    inset: 10px;
+  }
+
+  .project-detail-shot {
+    right: 10px;
+    bottom: 10px;
+    width: 58%;
+  }
+
+  .project-detail-shot figcaption {
+    display: none;
   }
 
   .projects {
