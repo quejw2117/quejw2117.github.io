@@ -3,6 +3,7 @@
 import { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import SpecularLink from "./components/SpecularLink";
 
 const projects = [
   {
@@ -569,9 +570,9 @@ export default function Home() {
           <a className="header-mail" href="mailto:1427954145@qq.com">
             邮箱联系
           </a>
-          <a className="contact-pill" href="#contact">
+          <SpecularLink className="contact-pill" href="#contact" radius={2}>
             联系我 <span aria-hidden="true">↗</span>
-          </a>
+          </SpecularLink>
         </div>
       </header>
 
@@ -611,9 +612,9 @@ export default function Home() {
               <br />
               用影像与智能工作流，让创意真正落地。
             </p>
-            <a className="hero-cta" href="#work">
+            <SpecularLink className="hero-cta" href="#work" radius={2}>
               VIEW SELECTED WORK <span aria-hidden="true">↘</span>
-            </a>
+            </SpecularLink>
           </div>
 
           <div className="hero-rail" aria-label="首屏浏览提示">
@@ -818,7 +819,10 @@ export default function Home() {
                   <span className="journal-pending">
                     {"cover" in clip ? "视频封面" : "待添加视频"}
                   </span>
-                  <span className="journal-play" aria-hidden="true">
+                  <span
+                    className="journal-play specular-orb"
+                    aria-hidden="true"
+                  >
                     ▶
                   </span>
                 </div>
@@ -893,7 +897,7 @@ export default function Home() {
           <div className="contact-directory">
             <div className="contact-list" aria-label="联系方式">
               <a
-                className="contact-item"
+                className="contact-item specular-surface"
                 href="https://github.com/quejw2117"
                 target="_blank"
                 rel="noreferrer"
@@ -906,20 +910,26 @@ export default function Home() {
                 <span>WECHAT</span>
                 <strong>Mr_QUEJW</strong>
               </div>
-              <a className="contact-item" href="mailto:1427954145@qq.com">
+              <a
+                className="contact-item specular-surface"
+                href="mailto:1427954145@qq.com"
+              >
                 <span>QQ / EMAIL</span>
                 <strong>1427954145@qq.com</strong>
                 <i aria-hidden="true">↗</i>
               </a>
               <a
-                className="contact-item"
+                className="contact-item specular-surface"
                 href="mailto:quejw2117@gmail.com"
               >
                 <span>GOOGLE MAIL</span>
                 <strong>quejw2117@gmail.com</strong>
                 <i aria-hidden="true">↗</i>
               </a>
-              <a className="contact-item" href="tel:18250030358">
+              <a
+                className="contact-item specular-surface"
+                href="tel:18250030358"
+              >
                 <span>PHONE</span>
                 <strong>182 5003 0358</strong>
                 <i aria-hidden="true">↗</i>
