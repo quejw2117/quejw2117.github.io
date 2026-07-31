@@ -74,20 +74,6 @@ const journalClips = [
       "journal-poster journal-poster--aigc journal-poster--has-cover",
     cover: "/aigc-video-cover.jpg",
   },
-  {
-    index: "03",
-    type: "ON THE ROAD",
-    title: "旅途与现场",
-    meta: "旅行 VLOG / 沿途片段",
-    className: "journal-poster journal-poster--road",
-  },
-  {
-    index: "04",
-    type: "PERSONAL ARCHIVE",
-    title: "更多生活记录",
-    meta: "持续更新中",
-    className: "journal-poster journal-poster--archive",
-  },
 ];
 
 export default function Home() {

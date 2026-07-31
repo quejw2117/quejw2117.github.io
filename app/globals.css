@@ -1114,45 +1114,6 @@ a {
   top: 56%;
 }
 
-.journal-poster--road .journal-poster-inner {
-  background:
-    radial-gradient(ellipse at 50% 96%, rgba(208, 221, 178, 0.7), transparent 32%),
-    linear-gradient(180deg, #52697b, #d59c70 55%, #292623);
-}
-
-.journal-poster--road .journal-poster-inner > span:nth-child(1) {
-  width: 1px;
-  height: 78%;
-  left: 50%;
-  bottom: 0;
-  transform: rotate(13deg);
-}
-
-.journal-poster--road .journal-poster-inner > span:nth-child(2) {
-  width: 140%;
-  aspect-ratio: 1;
-  left: -20%;
-  bottom: -96%;
-  border-radius: 50%;
-}
-
-.journal-poster--archive .journal-poster-inner {
-  background:
-    radial-gradient(circle at 28% 65%, rgba(178, 202, 84, 0.75), transparent 17%),
-    radial-gradient(circle at 72% 34%, rgba(104, 128, 213, 0.68), transparent 20%),
-    #17191d;
-}
-
-.journal-poster--archive .journal-poster-inner > span:nth-child(1) {
-  inset: 14%;
-  border-radius: 50%;
-}
-
-.journal-poster--archive .journal-poster-inner > span:nth-child(2) {
-  inset: 26%;
-  border-radius: 50%;
-}
-
 .journal-poster--aigc .journal-poster-inner {
   background:
     radial-gradient(circle at 28% 42%, rgba(198, 255, 75, 0.82), transparent 13%),
