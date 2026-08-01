@@ -2096,8 +2096,52 @@ a.contact-item:hover {
     linear-gradient(145deg, #15171b, #060709);
 }
 
+.archive-video-card--filled {
+  padding: 0;
+  background: #050608;
+}
+
+.archive-video-card__media {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  background: #050608;
+}
+
+.archive-video-card__caption {
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  right: 0;
+  bottom: 46px;
+  padding: 58px 22px 18px;
+  display: flex;
+  flex-direction: column;
+  pointer-events: none;
+  background: linear-gradient(0deg, rgba(4, 5, 7, 0.88), transparent);
+}
+
+.archive-video-card__caption strong {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(17px, 1.4vw, 24px);
+  font-weight: 520;
+  letter-spacing: -0.025em;
+}
+
+.archive-video-card__caption small {
+  margin-top: 8px;
+  color: rgba(255, 255, 255, 0.62);
+  font-family: "SFMono-Regular", Consolas, monospace;
+  font-size: 8px;
+  letter-spacing: 0.12em;
+}
+
 .archive-video-card > span {
   position: absolute;
+  z-index: 3;
   left: 22px;
   top: 22px;
   color: #868b95;

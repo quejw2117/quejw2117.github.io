@@ -6,6 +6,11 @@ type CommerceArchiveProps = {
   alternateHref: string;
   alternateLabel: string;
   tone: "mass" | "luxury";
+  cases?: Array<{
+    title: string;
+    src: string;
+    poster: string;
+  }>;
 };
 
 export default function CommerceArchive({
@@ -16,6 +21,7 @@ export default function CommerceArchive({
   alternateHref,
   alternateLabel,
   tone,
+  cases,
 }: CommerceArchiveProps) {
   return (
     <main className={`archive-page archive-page--${tone}`}>
@@ -43,17 +49,49 @@ export default function CommerceArchive({
         <div className="archive-library__heading">
           <span>VIDEO ARCHIVE / 01—04</span>
           <h2>过往视频案例</h2>
-          <p>视频入口已经预留。后续可接入本地视频文件或小红书等外部作品链接。</p>
+          <p>
+            {cases?.length
+              ? "精选大众消费类 AI 商业视频，点击播放即可查看完整案例。"
+              : "视频入口已经预留。后续可接入本地视频文件或小红书等外部作品链接。"}
+          </p>
         </div>
         <div className="archive-video-grid">
-          {Array.from({ length: 4 }, (_, index) => (
-            <article className="archive-video-card" key={index}>
-              <span>{String(index + 1).padStart(2, "0")}</span>
-              <i aria-hidden="true">▶</i>
-              <strong>VIDEO CASE</strong>
-              <small>待接入作品视频</small>
-            </article>
-          ))}
+          {Array.from({ length: 4 }, (_, index) => {
+            const videoCase = cases?.[index];
+
+            return (
+              <article
+                className={`archive-video-card${videoCase ? " archive-video-card--filled" : ""}`}
+                key={videoCase?.src ?? index}
+              >
+                <span>{String(index + 1).padStart(2, "0")}</span>
+                {videoCase ? (
+                  <>
+                    <video
+                      className="archive-video-card__media"
+                      controls
+                      playsInline
+                      preload="metadata"
+                      poster={videoCase.poster}
+                      aria-label={`${videoCase.title}视频案例`}
+                    >
+                      <source src={videoCase.src} type="video/mp4" />
+                    </video>
+                    <div className="archive-video-card__caption">
+                      <strong>{videoCase.title}</strong>
+                      <small>AI COMMERCIAL FILM</small>
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <i aria-hidden="true">▶</i>
+                    <strong>VIDEO CASE</strong>
+                    <small>待接入作品视频</small>
+                  </>
+                )}
+              </article>
+            );
+          })}
         </div>
       </section>
 

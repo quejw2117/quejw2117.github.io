@@ -10,6 +10,28 @@ export default function MassMarketArchivePage() {
       alternateHref="/commerce/luxury"
       alternateLabel="查看高奢珠宝"
       tone="mass"
+      cases={[
+        {
+          title: "铸铁铸工胶",
+          src: "/commerce-videos/mass-01.mp4",
+          poster: "/commerce-videos/mass-01.jpg",
+        },
+        {
+          title: "烧烤炉架清洁剂",
+          src: "/commerce-videos/mass-02.mp4",
+          poster: "/commerce-videos/mass-02.jpg",
+        },
+        {
+          title: "高压水枪",
+          src: "/commerce-videos/mass-03.mp4",
+          poster: "/commerce-videos/mass-03.jpg",
+        },
+        {
+          title: "硬币创意短片",
+          src: "/commerce-videos/mass-04.mp4",
+          poster: "/commerce-videos/mass-04.jpg",
+        },
+      ]}
     />
   );
 }
