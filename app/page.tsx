@@ -76,6 +76,27 @@ const journalClips = [
   },
 ];
 
+const commerceCategories = [
+  {
+    index: "01",
+    eyebrow: "MASS MARKET / DAILY COMMERCE",
+    title: "大众消费",
+    description: "服饰、家居、美妆与日用商品的高频内容生产。",
+    href: "/commerce/mass-market",
+    images: ["/commerce-mass-01.png", "/commerce-mass-02.png"],
+    tone: "commerce-card--mass",
+  },
+  {
+    index: "02",
+    eyebrow: "HIGH JEWELRY / LUXURY VISUAL",
+    title: "高奢珠宝",
+    description: "以材质、光泽与细节控制建立更高价值感的商业影像。",
+    href: "/commerce/luxury",
+    images: ["/commerce-luxury-01.png", "/commerce-luxury-02.png"],
+    tone: "commerce-card--luxury",
+  },
+];
+
 export default function Home() {
   const rootRef = useRef<HTMLElement>(null);
 
@@ -405,6 +426,52 @@ export default function Home() {
       });
 
       gsap.fromTo(
+        ".commerce-card",
+        {
+          y: 130,
+          scale: 0.93,
+          clipPath: "inset(12% 0 12% 0)",
+          autoAlpha: 0,
+        },
+        {
+          y: 0,
+          scale: 1,
+          clipPath: "inset(0% 0 0% 0)",
+          autoAlpha: 1,
+          duration: 1.5,
+          stagger: 0.16,
+          ease: "power4.out",
+          scrollTrigger: {
+            trigger: ".commerce-grid",
+            start: "top 82%",
+            once: true,
+          },
+        },
+      );
+
+      if (window.innerWidth > 760) {
+        gsap.utils
+          .toArray<HTMLElement>(".commerce-card__image")
+          .forEach((image) => {
+            gsap.fromTo(
+              image,
+              { yPercent: -4, scale: 1.06 },
+              {
+                yPercent: 4,
+                scale: 1,
+                ease: "none",
+                scrollTrigger: {
+                  trigger: image,
+                  start: "top bottom",
+                  end: "bottom top",
+                  scrub: 1.5,
+                },
+              },
+            );
+          });
+      }
+
+      gsap.fromTo(
         ".journal-card",
         {
           y: 120,
@@ -568,6 +635,7 @@ export default function Home() {
         </a>
         <nav aria-label="主导航">
           <a href="#work">工作流搭建</a>
+          <a href="#commerce">AI 带货视频</a>
           <a href="#journal">兴趣影像</a>
           <a href="#about">关于我</a>
           <a href="#ability">专业能力</a>
@@ -629,7 +697,7 @@ export default function Home() {
               <i>
                 <b />
               </i>
-              <span>01 / 05</span>
+              <span>01 / 06</span>
             </div>
             <a href="#about">
               SCROLL TO EXPLORE <span aria-hidden="true">↓</span>
@@ -796,6 +864,59 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="commerce section-space" id="commerce">
+        <div className="page-shell">
+          <div
+            className="section-display section-display--commerce"
+            aria-hidden="true"
+          >
+            <span>AI COMMERCE</span>
+          </div>
+          <div className="section-heading section-heading--split">
+            <div>
+              <span>03 / AI COMMERCE FILMS</span>
+              <h2>AI 带货视频</h2>
+            </div>
+            <p>
+              从高频消费内容到高奢珠宝影像，用不同的视觉策略匹配商品价值与传播场景。
+              <br />
+              点击分类进入案例库，后续可持续补充你过往制作的视频作品。
+            </p>
+          </div>
+
+          <div className="commerce-grid">
+            {commerceCategories.map((category) => (
+              <a
+                className={`commerce-card ${category.tone} specular-reactive`}
+                href={category.href}
+                key={category.index}
+              >
+                <div className="commerce-card__media">
+                  {category.images.map((image, index) => (
+                    <img
+                      className="commerce-card__image"
+                      src={image}
+                      alt=""
+                      key={image}
+                      aria-hidden="true"
+                      data-layer={index + 1}
+                    />
+                  ))}
+                  <span className="commerce-card__index">{category.index}</span>
+                  <span className="commerce-card__open">VIEW ARCHIVE ↗</span>
+                </div>
+                <div className="commerce-card__copy">
+                  <span>{category.eyebrow}</span>
+                  <h3>{category.title}</h3>
+                  <p>{category.description}</p>
+                </div>
+                <span className="specular-reactive__fx" aria-hidden="true" />
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="journal section-space" id="journal">
         <div className="page-shell">
           <div
@@ -806,7 +927,7 @@ export default function Home() {
           </div>
           <div className="section-heading section-heading--split">
             <div>
-              <span>03 / INTEREST ARCHIVE</span>
+              <span>04 / INTEREST ARCHIVE</span>
               <h2>兴趣影像</h2>
             </div>
             <p>
@@ -866,7 +987,7 @@ export default function Home() {
           </div>
           <div className="section-heading section-heading--split">
             <div>
-              <span>04 / CAPABILITIES</span>
+              <span>05 / CAPABILITIES</span>
               <h2>
                 一个人，
                 <br />
@@ -906,7 +1027,7 @@ export default function Home() {
             <span>CONTACT</span>
           </div>
           <div className="contact-top">
-            <span>05 / CONTACT</span>
+            <span>06 / CONTACT</span>
             <span>LET&apos;S CREATE SOMETHING MEANINGFUL.</span>
           </div>
           <div className="contact-center">
