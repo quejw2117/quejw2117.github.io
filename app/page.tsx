@@ -97,6 +97,33 @@ export default function Home() {
       return;
     }
 
+    const handleSpecularMove = (event: globalThis.PointerEvent) => {
+      const target = (event.target as Element | null)?.closest<HTMLElement>(
+        ".specular-reactive",
+      );
+
+      if (!target || !root.contains(target)) {
+        return;
+      }
+
+      const rect = target.getBoundingClientRect();
+      const x = event.clientX - rect.left;
+      const y = event.clientY - rect.top;
+      const angle =
+        Math.atan2(
+          event.clientY - (rect.top + rect.height / 2),
+          event.clientX - (rect.left + rect.width / 2),
+        ) *
+          (180 / Math.PI) +
+        90;
+
+      target.style.setProperty("--surface-x", `${x}px`);
+      target.style.setProperty("--surface-y", `${y}px`);
+      target.style.setProperty("--surface-angle", `${angle}deg`);
+    };
+
+    root.addEventListener("pointermove", handleSpecularMove);
+
     document.body.classList.add("is-opening");
 
     const context = gsap.context(() => {
@@ -511,6 +538,7 @@ export default function Home() {
 
     return () => {
       document.body.classList.remove("is-opening");
+      root.removeEventListener("pointermove", handleSpecularMove);
       context.revert();
     };
   }, []);
@@ -724,7 +752,7 @@ export default function Home() {
           <div className="projects">
             {projects.map((project) => (
               <article className="project-card" key={project.index}>
-                <div className={project.className}>
+                <div className={`${project.className} specular-reactive`}>
                   <span className="project-index">{project.index}</span>
                   <div className="visual-core" aria-hidden="true">
                     {"cover" in project ? (
@@ -744,6 +772,7 @@ export default function Home() {
                     )}
                   </div>
                   <span className="project-metric">{project.metric}</span>
+                  <span className="specular-reactive__fx" aria-hidden="true" />
                 </div>
                 <div className="project-info">
                   <div>
@@ -791,7 +820,7 @@ export default function Home() {
           <div className="journal-grid">
             {journalClips.map((clip) => (
               <article className="journal-card" key={clip.index}>
-                <div className={clip.className}>
+                <div className={`${clip.className} specular-reactive`}>
                   {"cover" in clip ? (
                     <img
                       className="journal-poster-inner journal-cover"
@@ -815,6 +844,7 @@ export default function Home() {
                   >
                     ▶
                   </span>
+                  <span className="specular-reactive__fx" aria-hidden="true" />
                 </div>
                 <div className="journal-caption">
                   <div>
@@ -851,7 +881,10 @@ export default function Home() {
           </div>
           <div className="capability-grid">
             {capabilities.map((capability) => (
-              <article key={capability.number}>
+              <article
+                className="specular-reactive specular-reactive--quiet"
+                key={capability.number}
+              >
                 <span className="cap-number">{capability.number}</span>
                 <div className="cap-symbol" aria-hidden="true">
                   {capability.number.slice(-1)}
@@ -859,6 +892,7 @@ export default function Home() {
                 <h3>{capability.title}</h3>
                 <p>{capability.text}</p>
                 <span className="cap-tools">{capability.tools}</span>
+                <span className="specular-reactive__fx" aria-hidden="true" />
               </article>
             ))}
           </div>
