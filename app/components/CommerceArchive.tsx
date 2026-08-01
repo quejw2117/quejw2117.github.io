@@ -51,7 +51,7 @@ export default function CommerceArchive({
           <h2>过往视频案例</h2>
           <p>
             {cases?.length
-              ? "精选大众消费类 AI 商业视频，点击播放即可查看完整案例。"
+              ? `精选${tone === "luxury" ? "高奢珠宝" : "大众消费"}类 AI 商业视频，点击播放即可查看完整案例。`
               : "视频入口已经预留。后续可接入本地视频文件或小红书等外部作品链接。"}
           </p>
         </div>

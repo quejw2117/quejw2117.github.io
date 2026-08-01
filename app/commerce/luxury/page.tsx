@@ -10,6 +10,28 @@ export default function LuxuryArchivePage() {
       alternateHref="/commerce/mass-market"
       alternateLabel="查看大众消费"
       tone="luxury"
+      cases={[
+        {
+          title: "蓝宝石珠宝",
+          src: "/commerce-videos/luxury-01.mp4",
+          poster: "/commerce-videos/luxury-01.jpg",
+        },
+        {
+          title: "高级珠宝系列 01",
+          src: "/commerce-videos/luxury-02.mp4",
+          poster: "/commerce-videos/luxury-02.jpg",
+        },
+        {
+          title: "高级珠宝系列 02",
+          src: "/commerce-videos/luxury-03.mp4",
+          poster: "/commerce-videos/luxury-03.jpg",
+        },
+        {
+          title: "高级珠宝系列 03",
+          src: "/commerce-videos/luxury-04.mp4",
+          poster: "/commerce-videos/luxury-04.jpg",
+        },
+      ]}
     />
   );
 }
