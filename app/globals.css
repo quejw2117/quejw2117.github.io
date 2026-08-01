@@ -2069,14 +2069,15 @@ a.contact-item:hover {
 
 .archive-video-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   border-top: 1px solid rgba(255, 255, 255, 0.16);
   border-left: 1px solid rgba(255, 255, 255, 0.16);
 }
 
 .archive-video-card {
   position: relative;
-  min-height: 430px;
+  min-height: 0;
+  aspect-ratio: 9 / 16;
   padding: 24px;
   display: flex;
   flex-direction: column;
@@ -2229,9 +2230,6 @@ a.contact-item:hover {
     min-height: 720px;
   }
 
-  .archive-video-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
 }
 
 @media (max-width: 700px) {
@@ -2468,11 +2466,18 @@ a.contact-item:hover {
   }
 
   .archive-video-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: none;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(230px, 76vw);
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scroll-snap-type: inline mandatory;
+    scrollbar-width: thin;
   }
 
   .archive-video-card {
-    min-height: 360px;
+    min-height: 0;
+    scroll-snap-align: start;
   }
 }
 

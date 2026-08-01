@@ -41,12 +41,12 @@ export default function CommerceArchive({
 
       <section className="archive-library">
         <div className="archive-library__heading">
-          <span>VIDEO ARCHIVE / 01—06</span>
+          <span>VIDEO ARCHIVE / 01—04</span>
           <h2>过往视频案例</h2>
           <p>视频入口已经预留。后续可接入本地视频文件或小红书等外部作品链接。</p>
         </div>
         <div className="archive-video-grid">
-          {Array.from({ length: 6 }, (_, index) => (
+          {Array.from({ length: 4 }, (_, index) => (
             <article className="archive-video-card" key={index}>
               <span>{String(index + 1).padStart(2, "0")}</span>
               <i aria-hidden="true">▶</i>
