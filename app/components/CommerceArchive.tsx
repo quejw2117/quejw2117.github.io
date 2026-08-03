@@ -10,6 +10,13 @@ type CommerceArchiveProps = {
     title: string;
     src: string;
     poster: string;
+    task: string;
+    role: string;
+    direction: string;
+    method: string;
+    correction: string;
+    delivery: string;
+    data: string;
   }>;
 };
 
@@ -81,6 +88,45 @@ export default function CommerceArchive({
                       <strong>{videoCase.title}</strong>
                       <small>AI COMMERCIAL FILM</small>
                     </div>
+                    <details className="archive-case-notes">
+                      <summary>
+                        案例说明 <span aria-hidden="true">＋</span>
+                      </summary>
+                      <div className="archive-case-notes__panel">
+                        <span>CASE NOTES / 案例证据</span>
+                        <h3>{videoCase.title}</h3>
+                        <dl>
+                          <div>
+                            <dt>任务背景</dt>
+                            <dd>{videoCase.task}</dd>
+                          </div>
+                          <div>
+                            <dt>本人职责</dt>
+                            <dd>{videoCase.role}</dd>
+                          </div>
+                          <div>
+                            <dt>参考 / 创意方向</dt>
+                            <dd>{videoCase.direction}</dd>
+                          </div>
+                          <div>
+                            <dt>生成与后期方法</dt>
+                            <dd>{videoCase.method}</dd>
+                          </div>
+                          <div>
+                            <dt>关键修正</dt>
+                            <dd>{videoCase.correction}</dd>
+                          </div>
+                          <div>
+                            <dt>成片</dt>
+                            <dd>{videoCase.delivery}</dd>
+                          </div>
+                          <div className="archive-case-notes__data">
+                            <dt>投放数据</dt>
+                            <dd>{videoCase.data}</dd>
+                          </div>
+                        </dl>
+                      </div>
+                    </details>
                   </>
                 ) : (
                   <>

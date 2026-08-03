@@ -8,11 +8,11 @@ import SpecularLink from "./components/SpecularLink";
 const projects = [
   {
     index: "01",
-    type: "AI VIDEO REPLICATION SYSTEM",
-    title: "AI 商品视频复刻\n工作流系统",
+    type: "GENERATIVE VIDEO WORKFLOW",
+    title: "即梦与多模型\n视频生产系统",
     description:
-      "从参考视频解析、分镜确认、商品替换到 Seedance 成片，将多模型协作整理为可重复执行的生产流程。",
-    tags: ["Gemini", "Seedream", "Seedance 2.0"],
+      "从参考拆解、分镜生成、人物与产品一致性测试，到失败样本修正、后期质检与交付，把多模型协作沉淀为可复用 SOP。",
+    tags: ["即梦 / Dreamina", "Multi-model Test", "Consistency QC"],
     metric: "4 STEP WORKFLOW",
     className:
       "project-visual project-visual--signal project-visual--with-media",
@@ -20,12 +20,12 @@ const projects = [
   },
   {
     index: "02",
-    type: "SOCIAL GROWTH",
-    title: "多平台内容增长\n与品牌获客",
+    type: "CREATIVE RESEARCH & ITERATION",
+    title: "爆款结构拆解\n与创意迭代",
     description:
-      "统筹小红书、抖音、快手与视频号内容，以视觉设计、拍摄剪辑和数据复盘驱动稳定咨询。",
-    tags: ["Content Strategy", "Campaign", "Growth"],
-    metric: "累计获客 100+",
+      "围绕开头钩子、卖点顺序、镜头节奏与平台反馈拆解参考案例，形成可执行创意假设，并以基础数据指标辅助下一轮迭代。",
+    tags: ["Hook Research", "Creative Test", "Basic Metrics"],
+    metric: "RESEARCH · TEST · REVIEW",
     className: "project-visual project-visual--orbit",
   },
 ];
@@ -33,27 +33,39 @@ const projects = [
 const capabilities = [
   {
     number: "A.01",
-    title: "视觉与品牌表达",
-    text: "以品牌目标为起点，建立字体、色彩、版式与影像语言，让视觉不只“好看”，更能被识别与记住。",
-    tools: "PS · Procreate · PPT",
+    title: "即梦与多模型生成",
+    text: "根据商品、人物与镜头控制需求组合即梦、Seedance、Gemini、GPT 等模型，完成从关键帧到动态成片的生成测试。",
+    tools: "Dreamina · Seedance · Gemini · GPT",
   },
   {
     number: "A.02",
-    title: "AIGC 影像制作",
-    text: "熟练使用 Seedance、GPT、Gemini 等工具，把参考图约束、提示词和品控标准转化为稳定成片。",
-    tools: "Seedance · GPT · Gemini",
+    title: "分镜与一致性控制",
+    text: "把创意拆成可执行分镜，用参考约束、机位、材质与关键特征控制人物和产品在连续镜头中的一致性。",
+    tools: "Storyboard · Reference · Consistency",
   },
   {
     number: "A.03",
-    title: "视频与动态叙事",
-    text: "从策划、分镜、拍摄到剪辑，兼顾节奏、视觉锚点和平台语境，完成端到端内容创作。",
-    tools: "DaVinci · AE · 剪映",
+    title: "后期剪辑与视听包装",
+    text: "完成剪辑、调色、字幕、音效与节奏整理，让生成素材从单个镜头进入可交付的电商短视频成片。",
+    tools: "剪映 · DaVinci · AE · Sound",
   },
   {
     number: "A.04",
-    title: "内容增长系统",
-    text: "理解小红书、抖音、快手与视频号的内容机制，用数据复盘持续校准创意与转化路径。",
-    tools: "Strategy · Data · Growth",
+    title: "爆款结构拆解",
+    text: "拆解高表现内容的开头钩子、卖点顺序、镜头密度与平台节奏，把参考案例转译为新的创意方向。",
+    tools: "Hook · Selling Point · Pacing",
+  },
+  {
+    number: "A.05",
+    title: "基础数据指标理解",
+    text: "理解播放、完播、点击与互动等基础指标如何反映内容问题，用于提出下一轮创意假设，不代替专业投放判断。",
+    tools: "Completion · Click · Interaction",
+  },
+  {
+    number: "A.06",
+    title: "SOP 沉淀与内部分享",
+    text: "记录提示词、失败样本、修正方法与质检标准，整理为可复用模板、交付清单和团队内部分享材料。",
+    tools: "SOP · Failure Log · QA Checklist",
   },
 ];
 
@@ -164,7 +176,7 @@ export default function Home() {
         scaleY: 0.66,
         transformOrigin: "50% 100%",
       });
-      gsap.set(".hero-kicker, .hero-center > p, .hero-cta, .hero-rail", {
+      gsap.set(".hero-kicker, .hero-center > p, .hero-cta, .hero-secondary-link, .hero-rail", {
         y: 34,
         autoAlpha: 0,
       });
@@ -256,7 +268,7 @@ export default function Home() {
           "-=0.76",
         )
         .to(
-          ".hero-kicker, .hero-center > p, .hero-cta, .hero-rail",
+          ".hero-kicker, .hero-center > p, .hero-cta, .hero-secondary-link, .hero-rail",
           {
             y: 0,
             autoAlpha: 1,
@@ -626,7 +638,7 @@ export default function Home() {
       </div>
 
       <div className="promo-bar">
-        <span>PORTFOLIO 2026 · VISUAL DESIGN × AI CREATIVE</span>
+        <span>PORTFOLIO 2026 · AI VIDEO DESIGN × VISUAL SYSTEMS</span>
         <span>SHENZHEN, CHINA</span>
       </div>
       <header className="site-header">
@@ -634,11 +646,11 @@ export default function Home() {
           QUE JIAWEI<span>/26</span>
         </a>
         <nav aria-label="主导航">
-          <a href="#work">工作流搭建</a>
           <a href="#commerce">AI 带货视频</a>
-          <a href="#journal">兴趣影像</a>
-          <a href="#about">关于我</a>
+          <a href="#work">工作流搭建</a>
           <a href="#ability">专业能力</a>
+          <a href="#about">关于我</a>
+          <a href="#journal">兴趣影像</a>
         </nav>
         <div className="header-actions">
           <a className="header-mail" href="mailto:1427954145@qq.com">
@@ -671,7 +683,7 @@ export default function Home() {
           <div className="hero-center">
             <div className="hero-kicker">
               <span className="status-dot" />
-              AVAILABLE FOR SELECTED PROJECTS
+              AI VIDEO DESIGN · ECOMMERCE CREATIVE
             </div>
             <h1>
               <span className="hero-title-line">
@@ -682,17 +694,22 @@ export default function Home() {
               </span>
             </h1>
             <p>
-              视觉设计师 / AI 设计师 / 品牌设计师
+              AI 视频设计师 / 视觉设计师
               <br />
-              用影像与智能工作流，让创意真正落地。
+              用生成式影像与可复用工作流，让电商创意高效落地。
             </p>
-            <SpecularLink className="hero-cta" href="#work" radius={2}>
-              VIEW SELECTED WORK <span aria-hidden="true">↘</span>
-            </SpecularLink>
+            <div className="hero-actions">
+              <SpecularLink className="hero-cta" href="#commerce" radius={2}>
+                VIEW AI COMMERCE FILMS <span aria-hidden="true">↘</span>
+              </SpecularLink>
+              <a className="hero-secondary-link" href="#work">
+                OTHER SELECTED WORK <span aria-hidden="true">↘</span>
+              </a>
+            </div>
           </div>
 
           <div className="hero-rail" aria-label="首屏浏览提示">
-            <span>VISUAL DESIGN · AIGC · BRAND SYSTEMS</span>
+            <span>AI VIDEO · ECOMMERCE · VISUAL SYSTEMS</span>
             <div className="hero-rail-progress" aria-hidden="true">
               <i>
                 <b />
@@ -732,7 +749,7 @@ export default function Home() {
               </div>
               <figcaption>
                 <span>QUE JIAWEI</span>
-                <span>VISUAL / AI DESIGNER</span>
+                <span>AI VIDEO / VISUAL DESIGNER</span>
               </figcaption>
             </figure>
             <div className="about-copy">
@@ -800,20 +817,73 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="work section-space" id="work">
+      <section className="commerce section-space" id="commerce">
         <div className="page-shell">
-          <div className="section-display" aria-hidden="true">
-            <span>SELECTED WORK</span>
+          <div
+            className="section-display section-display--commerce"
+            aria-hidden="true"
+          >
+            <span>AI COMMERCE</span>
           </div>
           <div className="section-heading section-heading--split">
             <div>
-              <span>02 / SELECTED WORK</span>
+              <span>02 / AI COMMERCE FILMS</span>
+              <h2>AI 带货视频</h2>
+            </div>
+            <p>
+              从大众消费到高奢珠宝，四条 9:16 成片以内快速呈现我的生成、修正与后期能力。
+              <br />
+              点击分类查看任务背景、本人职责、制作方法与关键修正，三次点击内到达完整案例。
+            </p>
+          </div>
+
+          <div className="commerce-grid">
+            {commerceCategories.map((category) => (
+              <a
+                className={`commerce-card ${category.tone} specular-reactive`}
+                href={category.href}
+                key={category.index}
+              >
+                <div className="commerce-card__media">
+                  {category.images.map((image, index) => (
+                    <img
+                      className="commerce-card__image"
+                      src={image}
+                      alt=""
+                      key={image}
+                      aria-hidden="true"
+                      data-layer={index + 1}
+                    />
+                  ))}
+                  <span className="commerce-card__index">{category.index}</span>
+                  <span className="commerce-card__open">VIEW ARCHIVE ↗</span>
+                </div>
+                <div className="commerce-card__copy">
+                  <span>{category.eyebrow}</span>
+                  <h3>{category.title}</h3>
+                  <p>{category.description}</p>
+                </div>
+                <span className="specular-reactive__fx" aria-hidden="true" />
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="work section-space" id="work">
+        <div className="page-shell">
+          <div className="section-display" aria-hidden="true">
+            <span>AI WORKFLOW</span>
+          </div>
+          <div className="section-heading section-heading--split">
+            <div>
+              <span>03 / WORKFLOW SYSTEM</span>
               <h2>工作流搭建</h2>
             </div>
             <p>
-              这些项目展示了我如何把视觉、内容与 AIGC 整理为可复用的生产系统。
+              从即梦与多模型测试，到分镜生成、人物与产品一致性控制，再到失败修正和 AI 素材质检。
               <br />
-              从系统结构到真实工具界面，呈现工作流如何被设计并最终落地。
+              最终沉淀为可复用 SOP、交付清单与内部分享，保留完整的 4 STEP WORKFLOW 设计语言。
             </p>
           </div>
 
@@ -859,59 +929,6 @@ export default function Home() {
                   </div>
                 </div>
               </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="commerce section-space" id="commerce">
-        <div className="page-shell">
-          <div
-            className="section-display section-display--commerce"
-            aria-hidden="true"
-          >
-            <span>AI COMMERCE</span>
-          </div>
-          <div className="section-heading section-heading--split">
-            <div>
-              <span>03 / AI COMMERCE FILMS</span>
-              <h2>AI 带货视频</h2>
-            </div>
-            <p>
-              从高频消费内容到高奢珠宝影像，用不同的视觉策略匹配商品价值与传播场景。
-              <br />
-              点击分类进入案例库，后续可持续补充你过往制作的视频作品。
-            </p>
-          </div>
-
-          <div className="commerce-grid">
-            {commerceCategories.map((category) => (
-              <a
-                className={`commerce-card ${category.tone} specular-reactive`}
-                href={category.href}
-                key={category.index}
-              >
-                <div className="commerce-card__media">
-                  {category.images.map((image, index) => (
-                    <img
-                      className="commerce-card__image"
-                      src={image}
-                      alt=""
-                      key={image}
-                      aria-hidden="true"
-                      data-layer={index + 1}
-                    />
-                  ))}
-                  <span className="commerce-card__index">{category.index}</span>
-                  <span className="commerce-card__open">VIEW ARCHIVE ↗</span>
-                </div>
-                <div className="commerce-card__copy">
-                  <span>{category.eyebrow}</span>
-                  <h3>{category.title}</h3>
-                  <p>{category.description}</p>
-                </div>
-                <span className="specular-reactive__fx" aria-hidden="true" />
-              </a>
             ))}
           </div>
         </div>
@@ -989,15 +1006,15 @@ export default function Home() {
             <div>
               <span>05 / CAPABILITIES</span>
               <h2>
-                一个人，
+                从生成到交付，
                 <br />
-                连接多种能力。
+                形成完整闭环。
               </h2>
             </div>
             <p>
-              从第一帧的审美判断，到最后一步的交付效率，
+              生成、分镜、一致性、后期、研究与 SOP，
               <br />
-              我希望每种能力都服务于同一个清晰目标。
+              每项能力都指向更稳定、更可复用的电商视频交付。
             </p>
           </div>
           <div className="capability-grid">
