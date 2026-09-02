@@ -54,7 +54,7 @@ export default function CommerceArchive({
 
       <section className="archive-library">
         <div className="archive-library__heading">
-          <span>VIDEO ARCHIVE / 01—04</span>
+          <span>VIDEO ARCHIVE / 01-04</span>
           <h2>过往视频案例</h2>
           <p>
             {cases?.length

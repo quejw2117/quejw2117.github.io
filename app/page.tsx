@@ -25,8 +25,10 @@ const projects = [
     description:
       "围绕开头钩子、卖点顺序、镜头节奏与平台反馈拆解参考案例，形成可执行创意假设，并以基础数据指标辅助下一轮迭代。",
     tags: ["Hook Research", "Creative Test", "Basic Metrics"],
-    metric: "RESEARCH · TEST · REVIEW",
-    className: "project-visual project-visual--orbit",
+    metric: "RESEARCH / TEST / REVIEW",
+    className:
+      "project-visual project-visual--research-case project-visual--with-media",
+    cover: "/creative-research-case.jpeg",
   },
 ];
 
@@ -35,56 +37,37 @@ const capabilities = [
     number: "A.01",
     title: "即梦与多模型生成",
     text: "根据商品、人物与镜头控制需求组合即梦、Seedance、Gemini、GPT 等模型，完成从关键帧到动态成片的生成测试。",
-    tools: "Dreamina · Seedance · Gemini · GPT",
+    tools: "Dreamina / Seedance / Gemini / GPT",
   },
   {
     number: "A.02",
     title: "分镜与一致性控制",
     text: "把创意拆成可执行分镜，用参考约束、机位、材质与关键特征控制人物和产品在连续镜头中的一致性。",
-    tools: "Storyboard · Reference · Consistency",
+    tools: "Storyboard / Reference / Consistency",
   },
   {
     number: "A.03",
     title: "后期剪辑与视听包装",
     text: "完成剪辑、调色、字幕、音效与节奏整理，让生成素材从单个镜头进入可交付的电商短视频成片。",
-    tools: "剪映 · DaVinci · AE · Sound",
+    tools: "剪映 / DaVinci / AE / Sound",
   },
   {
     number: "A.04",
     title: "爆款结构拆解",
     text: "拆解高表现内容的开头钩子、卖点顺序、镜头密度与平台节奏，把参考案例转译为新的创意方向。",
-    tools: "Hook · Selling Point · Pacing",
+    tools: "Hook / Selling Point / Pacing",
   },
   {
     number: "A.05",
     title: "基础数据指标理解",
     text: "理解播放、完播、点击与互动等基础指标如何反映内容问题，用于提出下一轮创意假设，不代替专业投放判断。",
-    tools: "Completion · Click · Interaction",
+    tools: "Completion / Click / Interaction",
   },
   {
     number: "A.06",
     title: "SOP 沉淀与内部分享",
     text: "记录提示词、失败样本、修正方法与质检标准，整理为可复用模板、交付清单和团队内部分享材料。",
-    tools: "SOP · Failure Log · QA Checklist",
-  },
-];
-
-const journalClips = [
-  {
-    index: "01",
-    type: "CITY VLOG",
-    title: "城市漫游",
-    meta: "日常观察 / 街头影像",
-    className: "journal-poster journal-poster--city",
-  },
-  {
-    index: "02",
-    type: "AIGC VIDEO",
-    title: "AIGC 视频制作",
-    meta: "个人制作 / AI 生成影像",
-    className:
-      "journal-poster journal-poster--aigc journal-poster--has-cover",
-    cover: "/aigc-video-cover.jpg",
+    tools: "SOP / Failure Log / QA Checklist",
   },
 ];
 
@@ -126,7 +109,6 @@ export default function Home() {
     ).matches;
 
     if (reducedMotion) {
-      gsap.set(".opening-sequence", { display: "none" });
       return;
     }
 
@@ -157,131 +139,54 @@ export default function Home() {
 
     root.addEventListener("pointermove", handleSpecularMove);
 
-    document.body.classList.add("is-opening");
-
     const context = gsap.context(() => {
-      const openingCount = root.querySelector<HTMLElement>(".opening-count");
-      const counter = { value: 0 };
-      const openingTimeline = gsap.timeline({
-        defaults: { ease: "power4.out" },
-        onComplete: () => {
-          ScrollTrigger.refresh();
-        },
-      });
-
       gsap.set(".site-header, .promo-bar", { y: -34, autoAlpha: 0 });
       gsap.set(".hero-title-line > span", {
-        yPercent: 118,
-        scaleX: 0.78,
-        scaleY: 0.66,
+        yPercent: 105,
         transformOrigin: "50% 100%",
       });
-      gsap.set(".hero-kicker, .hero-center > p, .hero-cta, .hero-secondary-link, .hero-rail", {
+      gsap.set(".hero-kicker, .hero-center > p, .hero-actions", {
         y: 34,
         autoAlpha: 0,
       });
-      gsap.set(".hero-video", { scale: 1.14 });
+      gsap.set(".hero-video", { scale: 1.06 });
 
-      openingTimeline
-        .fromTo(
-          ".opening-index, .opening-name",
-          { y: 24, autoAlpha: 0 },
-          {
-            y: 0,
-            autoAlpha: 1,
-            duration: 0.8,
-            stagger: 0.08,
-            ease: "power3.out",
-          },
-        )
-        .to(
-          counter,
-          {
-            value: 100,
-            duration: 1.35,
-            ease: "power2.inOut",
-            onUpdate: () => {
-              if (openingCount) {
-                openingCount.textContent = `${Math.round(counter.value)
-                  .toString()
-                  .padStart(2, "0")} / 100`;
-              }
-            },
-          },
-          0.12,
-        )
-        .to(
-          ".opening-copy",
-          {
-            y: -28,
-            autoAlpha: 0,
-            duration: 0.45,
-            ease: "power3.in",
-          },
-          "+=0.08",
-        )
-        .to(
-          ".opening-panel",
-          {
-            scaleY: 0,
-            transformOrigin: "50% 0%",
-            duration: 1.3,
-            stagger: { each: 0.075, from: "end" },
-            ease: "expo.inOut",
-          },
-          "-=0.14",
-        )
-        .to(
-          ".opening-sequence",
-          {
-            autoAlpha: 0,
-            pointerEvents: "none",
-            duration: 0.2,
-            onComplete: () => {
-              document.body.classList.remove("is-opening");
-              gsap.set(".opening-sequence", { display: "none" });
-            },
-          },
-          "-=0.18",
-        )
+      gsap
+        .timeline({ defaults: { ease: "power3.out" } })
         .to(
           ".promo-bar, .site-header",
           {
             y: 0,
             autoAlpha: 1,
-            duration: 0.9,
+            duration: 0.65,
             stagger: 0.07,
-            ease: "power3.out",
           },
-          "-=0.65",
+          0,
         )
         .to(
           ".hero-title-line > span",
           {
             yPercent: 0,
-            scaleX: 1,
-            scaleY: 1,
-            duration: 1.45,
-            stagger: 0.12,
+            duration: 1.05,
+            stagger: 0.09,
             ease: "power4.out",
           },
-          "-=0.76",
+          0.12,
         )
         .to(
-          ".hero-kicker, .hero-center > p, .hero-cta, .hero-secondary-link, .hero-rail",
+          ".hero-kicker, .hero-center > p, .hero-actions",
           {
             y: 0,
             autoAlpha: 1,
-            duration: 0.9,
-            stagger: 0.1,
-            ease: "power3.out",
+            duration: 0.72,
+            stagger: 0.08,
           },
-          "-=1",
+          0.48,
         )
         .to(
           ".hero-video",
-          { scale: 1, duration: 2.2, ease: "power3.out" },
-          "-=0.85",
+          { scale: 1, duration: 1.8, ease: "power2.out" },
+          0,
         );
 
       gsap.utils.toArray<HTMLElement>(".section-display").forEach((display) => {
@@ -484,52 +389,6 @@ export default function Home() {
       }
 
       gsap.fromTo(
-        ".journal-card",
-        {
-          y: 120,
-          scale: 0.94,
-          clipPath: "inset(12% 0 12% 0)",
-          autoAlpha: 0,
-        },
-        {
-          y: 0,
-          scale: 1,
-          clipPath: "inset(0% 0 0% 0)",
-          autoAlpha: 1,
-          duration: 1.45,
-          stagger: 0.13,
-          ease: "power4.out",
-          scrollTrigger: {
-            trigger: ".journal-grid",
-            start: "top 82%",
-            once: true,
-          },
-        },
-      );
-
-      if (window.innerWidth > 760) {
-        gsap.utils
-          .toArray<HTMLElement>(".journal-poster-inner")
-          .forEach((poster) => {
-            gsap.fromTo(
-              poster,
-              { yPercent: -5, scale: 1.08 },
-              {
-                yPercent: 5,
-                scale: 1,
-                ease: "none",
-                scrollTrigger: {
-                  trigger: poster,
-                  start: "top bottom",
-                  end: "bottom top",
-                  scrub: 1.5,
-                },
-              },
-            );
-          });
-      }
-
-      gsap.fromTo(
         ".capability-grid article",
         {
           y: 120,
@@ -616,7 +475,6 @@ export default function Home() {
     }, root);
 
     return () => {
-      document.body.classList.remove("is-opening");
       root.removeEventListener("pointermove", handleSpecularMove);
       context.revert();
     };
@@ -624,19 +482,6 @@ export default function Home() {
 
   return (
     <main ref={rootRef}>
-      <div className="opening-sequence" aria-hidden="true">
-        <div className="opening-panels">
-          {Array.from({ length: 5 }, (_, index) => (
-            <span className="opening-panel" key={index} />
-          ))}
-        </div>
-        <div className="opening-copy">
-          <span className="opening-index">PORTFOLIO / 2026</span>
-          <strong className="opening-name">QUE JIAWEI</strong>
-          <span className="opening-count">00 / 100</span>
-        </div>
-      </div>
-
       <div className="promo-bar">
         <span>PORTFOLIO 2026 · AI VIDEO DESIGN × VISUAL SYSTEMS</span>
         <span>SHENZHEN, CHINA</span>
@@ -650,7 +495,6 @@ export default function Home() {
           <a href="#work">工作流搭建</a>
           <a href="#ability">专业能力</a>
           <a href="#about">关于我</a>
-          <a href="#journal">兴趣影像</a>
         </nav>
         <div className="header-actions">
           <a className="header-mail" href="mailto:1427954145@qq.com">
@@ -660,6 +504,16 @@ export default function Home() {
             联系我 <span aria-hidden="true">↗</span>
           </SpecularLink>
         </div>
+        <details className="mobile-menu">
+          <summary>菜单</summary>
+          <nav aria-label="移动端主导航">
+            <a href="#commerce">AI 带货视频</a>
+            <a href="#work">工作流搭建</a>
+            <a href="#ability">专业能力</a>
+            <a href="#about">关于我</a>
+            <a href="#contact">联系我</a>
+          </nav>
+        </details>
       </header>
 
       <section className="hero" id="top">
@@ -682,7 +536,6 @@ export default function Home() {
         <div className="hero-content page-shell">
           <div className="hero-center">
             <div className="hero-kicker">
-              <span className="status-dot" />
               AI VIDEO DESIGN · ECOMMERCE CREATIVE
             </div>
             <h1>
@@ -708,18 +561,6 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="hero-rail" aria-label="首屏浏览提示">
-            <span>AI VIDEO · ECOMMERCE · VISUAL SYSTEMS</span>
-            <div className="hero-rail-progress" aria-hidden="true">
-              <i>
-                <b />
-              </i>
-              <span>01 / 06</span>
-            </div>
-            <a href="#about">
-              SCROLL TO EXPLORE <span aria-hidden="true">↓</span>
-            </a>
-          </div>
         </div>
       </section>
 
@@ -764,28 +605,28 @@ export default function Home() {
 
               <div className="experience-list">
                 <article>
-                  <time>2026.06 — NOW</time>
+                  <time>2026.06 - NOW</time>
                   <div>
                     <h3>AIGC 视频制作师</h3>
-                    <p>跨境电商商业短视频 · 策划 / 分镜 / 生成 / 品控</p>
+                    <p>跨境电商商业短视频 / 策划 / 分镜 / 生成 / 品控</p>
                   </div>
                 </article>
                 <article>
-                  <time>2025.11 — 2026.04</time>
+                  <time>2025.11 - 2026.04</time>
                   <div>
                     <h3>新媒体运营</h3>
                     <p>国创文化（深圳）科技有限公司</p>
                   </div>
                 </article>
                 <article>
-                  <time>2024.07 — 2025.10</time>
+                  <time>2024.07 - 2025.10</time>
                   <div>
                     <h3>自主创业 / 淘宝服装零售</h3>
-                    <p>淘宝店铺运营 · 服装销售 / 视觉呈现 / 社交媒体宣传与发布</p>
+                    <p>淘宝店铺运营 / 服装销售 / 视觉呈现 / 社交媒体宣传与发布</p>
                   </div>
                 </article>
                 <article>
-                  <time>2023.06 — 2025.08</time>
+                  <time>2023.06 - 2025.08</time>
                   <div>
                     <h3>美术老师 / 内容推广</h3>
                     <p>凯琪艺术培训有限公司</p>
@@ -889,7 +730,11 @@ export default function Home() {
 
           <div className="projects">
             {projects.map((project) => (
-              <article className="project-card" key={project.index}>
+              <article
+                className={`project-card project-card--${project.index}`}
+                id={project.index === "02" ? "creative-research" : undefined}
+                key={project.index}
+              >
                 <div className={`${project.className} specular-reactive`}>
                   <span className="project-index">{project.index}</span>
                   <div className="visual-core" aria-hidden="true">
@@ -927,69 +772,6 @@ export default function Home() {
                       <span key={tag}>{tag}</span>
                     ))}
                   </div>
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="journal section-space" id="journal">
-        <div className="page-shell">
-          <div
-            className="section-display section-display--journal"
-            aria-hidden="true"
-          >
-            <span>INTEREST IN MOTION</span>
-          </div>
-          <div className="section-heading section-heading--split">
-            <div>
-              <span>04 / INTEREST ARCHIVE</span>
-              <h2>兴趣影像</h2>
-            </div>
-            <p>
-              收藏镜头之外的兴趣：VLOG、旅途、生活片段与个人制作的 AIGC
-              影像实验。
-              <br />
-              视频位置已预留，后续可直接替换为你的真实作品。
-            </p>
-          </div>
-
-          <div className="journal-grid">
-            {journalClips.map((clip) => (
-              <article className="journal-card" key={clip.index}>
-                <div className={`${clip.className} specular-reactive`}>
-                  {"cover" in clip ? (
-                    <img
-                      className="journal-poster-inner journal-cover"
-                      src={clip.cover}
-                      alt={`${clip.title}封面`}
-                    />
-                  ) : (
-                    <div className="journal-poster-inner" aria-hidden="true">
-                      <span />
-                      <span />
-                      <span />
-                    </div>
-                  )}
-                  <span className="journal-index">{clip.index}</span>
-                  <span className="journal-pending">
-                    {"cover" in clip ? "视频封面" : "待添加视频"}
-                  </span>
-                  <span
-                    className="journal-play specular-orb"
-                    aria-hidden="true"
-                  >
-                    ▶
-                  </span>
-                  <span className="specular-reactive__fx" aria-hidden="true" />
-                </div>
-                <div className="journal-caption">
-                  <div>
-                    <span>{clip.type}</span>
-                    <h3>{clip.title}</h3>
-                  </div>
-                  <p>{clip.meta}</p>
                 </div>
               </article>
             ))}
@@ -1051,7 +833,7 @@ export default function Home() {
             <p>有一个值得被看见的想法？</p>
             <a className="contact-link-mask" href="mailto:1427954145@qq.com">
               <span>
-                LET&apos;S TALK
+                联系我
                 <i aria-hidden="true">↗</i>
               </span>
             </a>

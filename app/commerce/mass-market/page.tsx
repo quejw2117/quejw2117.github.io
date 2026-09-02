@@ -17,7 +17,7 @@ export default function MassMarketArchivePage() {
           poster: "/commerce-videos/mass-01.jpg",
           task: "用短视频清晰呈现铸工胶的修补场景、操作过程与粘接结果。",
           role: "参考拆解、分镜规划、AI 素材生成、剪辑包装与成片质检。",
-          direction: "以“破损问题—操作演示—修复结果”为主线，强化材质和近景动作。",
+          direction: "以“破损问题、操作演示、修复结果”为主线，强化材质和近景动作。",
           method: "多模型生成关键镜头，后期完成节奏、字幕、音效与产品卖点整理。",
           correction: "重点修正手部动作、工具结构、胶体质感与前后镜头连续性。",
           delivery: "9:16 大众消费类 AI 电商短视频成片。",
