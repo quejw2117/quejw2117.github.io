@@ -1,21 +1,9 @@
 import type { Metadata } from "next";
-import { headers } from "next/headers";
 import "./globals.css";
 import "./taste-upgrade.css";
 
-export async function generateMetadata(): Promise<Metadata> {
-  const requestHeaders = await headers();
-  const host =
-    requestHeaders.get("x-forwarded-host") ??
-    requestHeaders.get("host") ??
-    "localhost:3000";
-  const protocol =
-    requestHeaders.get("x-forwarded-proto") ??
-    (host.includes("localhost") ? "http" : "https");
-  const base = new URL(`${protocol}://${host}`);
-
-  return {
-    metadataBase: base,
+export const metadata: Metadata = {
+    metadataBase: new URL("https://que-jiawei-portfolio.quejw2117.chatgpt.site"),
     title: "阙嘉炜 | 视觉设计与 AIGC 创意",
     description:
       "阙嘉炜的个人作品集：视觉设计、AIGC 商业影像、品牌内容与智能创意工作流。",
@@ -35,8 +23,7 @@ export async function generateMetadata(): Promise<Metadata> {
       icon: "/favicon.svg",
       shortcut: "/favicon.svg",
     },
-  };
-}
+};
 
 export default function RootLayout({
   children,
