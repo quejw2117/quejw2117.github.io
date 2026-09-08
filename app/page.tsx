@@ -4,6 +4,7 @@ import { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SpecularLink from "./components/SpecularLink";
+import SectionNavigation from "./components/SectionNavigation";
 
 const projects = [
   {
@@ -481,7 +482,8 @@ export default function Home() {
   }, []);
 
   return (
-    <main ref={rootRef}>
+    <main ref={rootRef} className="portfolio-home">
+      <SectionNavigation />
       <div className="promo-bar">
         <span>PORTFOLIO 2026 · AI VIDEO DESIGN × VISUAL SYSTEMS</span>
         <span>SHENZHEN, CHINA</span>
@@ -516,7 +518,7 @@ export default function Home() {
         </details>
       </header>
 
-      <section className="hero" id="top">
+      <section className="hero" id="top" tabIndex={-1}>
         <video
           className="hero-video"
           autoPlay
@@ -564,7 +566,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="about section-space" id="about">
+      <section className="about section-space" id="about" tabIndex={-1}>
         <div className="page-shell">
           <div className="section-display section-display--dark" aria-hidden="true">
             <span>PROFILE</span>
@@ -658,7 +660,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="commerce section-space" id="commerce">
+      <section className="commerce section-space" id="commerce" tabIndex={-1}>
         <div className="page-shell">
           <div
             className="section-display section-display--commerce"
@@ -711,7 +713,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="work section-space" id="work">
+      <section className="work section-space" id="work" tabIndex={-1}>
         <div className="page-shell">
           <div className="section-display" aria-hidden="true">
             <span>AI WORKFLOW</span>
@@ -733,6 +735,7 @@ export default function Home() {
               <article
                 className={`project-card project-card--${project.index}`}
                 id={project.index === "02" ? "creative-research" : undefined}
+                tabIndex={project.index === "02" ? -1 : undefined}
                 key={project.index}
               >
                 <div className={`${project.className} specular-reactive`}>
@@ -779,7 +782,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="abilities section-space" id="ability">
+      <section className="abilities section-space" id="ability" tabIndex={-1}>
         <div className="page-shell">
           <div className="section-display" aria-hidden="true">
             <span>CAPABILITIES</span>
@@ -819,7 +822,7 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="contact-section" id="contact">
+      <footer className="contact-section" id="contact" tabIndex={-1}>
         <div className="contact-noise" aria-hidden="true" />
         <div className="page-shell contact-inner">
           <div className="section-display section-display--contact" aria-hidden="true">
