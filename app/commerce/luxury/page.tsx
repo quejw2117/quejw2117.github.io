@@ -1,6 +1,13 @@
 import CommerceArchive from "../../components/CommerceArchive";
+import CommerceArchiveV2 from "../../components/CommerceArchiveV2";
+import { findVideoCategory, videoLibrary } from "../../content/video-library";
 
 export default function LuxuryArchivePage() {
+  const managedCategory = findVideoCategory("luxury");
+  if (managedCategory) {
+    return <CommerceArchiveV2 category={managedCategory} categories={videoLibrary.categories} />;
+  }
+
   return (
     <CommerceArchive
       category="高奢珠宝"

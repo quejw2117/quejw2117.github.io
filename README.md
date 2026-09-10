@@ -1,5 +1,11 @@
 # vinext-starter
 
+## 本地视频内容工作台
+
+双击项目根目录的 `启动视频工作台.cmd`，或运行 `pnpm content:studio`，然后打开终端中显示的本地地址。工作台只绑定 `127.0.0.1`，不会出现在公开网站中。
+
+你可以在工作台里新增、删除和排序视频分类与视频，修改分类标题、分类小标题、视频标题和视频小标题，并上传 MP4/WebM 视频与 JPG/PNG/WebP 封面。点击“保存并发布”后，工作台会先执行 GitHub Pages 静态构建检查，再提交并推送网站内容。
+
 A clean full-stack starter running on
 [vinext](https://github.com/cloudflare/vinext), with optional Cloudflare D1 and
 Drizzle support.

@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 type CommerceArchiveProps = {
   category: string;
   eyebrow: string;
@@ -33,9 +35,9 @@ export default function CommerceArchive({
   return (
     <main className={`archive-page archive-page--${tone}`}>
       <header className="archive-header">
-        <a href="/#commerce" aria-label="返回作品集">
+        <Link href="/#commerce" aria-label="返回作品集">
           QUE JIAWEI<span>/26</span>
-        </a>
+        </Link>
         <span>AI COMMERCE FILMS</span>
         <a href={alternateHref}>{alternateLabel} ↗</a>
       </header>
@@ -142,7 +144,7 @@ export default function CommerceArchive({
       </section>
 
       <footer className="archive-footer">
-        <a href="/#commerce">← 返回作品集</a>
+        <Link href="/#commerce">← 返回作品集</Link>
         <span>© 2026 QUE JIAWEI</span>
       </footer>
     </main>

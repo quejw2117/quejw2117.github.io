@@ -5,6 +5,8 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SpecularLink from "./components/SpecularLink";
 import SectionNavigation from "./components/SectionNavigation";
+import CommerceSlider from "./components/CommerceSlider";
+import { videoLibrary } from "./content/video-library";
 
 const projects = [
   {
@@ -69,27 +71,6 @@ const capabilities = [
     title: "SOP 沉淀与内部分享",
     text: "记录提示词、失败样本、修正方法与质检标准，整理为可复用模板、交付清单和团队内部分享材料。",
     tools: "SOP / Failure Log / QA Checklist",
-  },
-];
-
-const commerceCategories = [
-  {
-    index: "01",
-    eyebrow: "MASS MARKET / DAILY COMMERCE",
-    title: "大众消费",
-    description: "服饰、家居、美妆与日用商品的高频内容生产。",
-    href: "/commerce/mass-market",
-    images: ["/commerce-mass-01.png", "/commerce-mass-02.png"],
-    tone: "commerce-card--mass",
-  },
-  {
-    index: "02",
-    eyebrow: "HIGH JEWELRY / LUXURY VISUAL",
-    title: "高奢珠宝",
-    description: "以材质、光泽与细节控制建立更高价值感的商业影像。",
-    href: "/commerce/luxury",
-    images: ["/commerce-luxury-01.png", "/commerce-luxury-02.png"],
-    tone: "commerce-card--luxury",
   },
 ];
 
@@ -664,42 +645,13 @@ export default function Home() {
               <h2>AI 带货视频</h2>
             </div>
             <p>
-              从大众消费到高奢珠宝，四条 9:16 成片以内快速呈现我的生成、修正与后期能力。
+              从日用好物、家居清洁到收藏视觉与高奢珠宝，以分类幻灯片快速浏览不同商业方向。
               <br />
-              点击分类查看任务背景、本人职责、制作方法与关键修正，三次点击内到达完整案例。
+              点击任意分类查看对应视频，并可在详情页随时切换到其他分类。
             </p>
           </div>
 
-          <div className="commerce-grid">
-            {commerceCategories.map((category) => (
-              <a
-                className={`commerce-card ${category.tone} specular-reactive`}
-                href={category.href}
-                key={category.index}
-              >
-                <div className="commerce-card__media">
-                  {category.images.map((image, index) => (
-                    <img
-                      className="commerce-card__image"
-                      src={image}
-                      alt=""
-                      key={image}
-                      aria-hidden="true"
-                      data-layer={index + 1}
-                    />
-                  ))}
-                  <span className="commerce-card__index">{category.index}</span>
-                  <span className="commerce-card__open">VIEW ARCHIVE ↗</span>
-                </div>
-                <div className="commerce-card__copy">
-                  <span>{category.eyebrow}</span>
-                  <h3>{category.title}</h3>
-                  <p>{category.description}</p>
-                </div>
-                <span className="specular-reactive__fx" aria-hidden="true" />
-              </a>
-            ))}
-          </div>
+          <CommerceSlider categories={videoLibrary.categories} />
         </div>
       </section>
 
