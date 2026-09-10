@@ -14,11 +14,11 @@
       "videos": [
         {
           "id": "cast-iron-repair-glue",
-          "title": "手工风铃",
+          "title": "铸铁铸工胶",
           "subtitle": "修补场景与效果演示",
-          "src": "C:\\Users\\EDY\\Desktop\\阙嘉炜\\123",
+          "src": "/commerce-videos/mass-01.mp4",
           "poster": "/commerce-videos/mass-01.jpg",
-          "task": "老兵退役后，得ptsd手工制作风铃治愈自己",
+          "task": "用短视频清晰呈现铸工胶的修补场景、操作过程与粘接结果。",
           "role": "参考拆解、分镜规划、AI 素材生成、剪辑包装与成片质检。",
           "direction": "以“破损问题、操作演示、修复结果”为主线，强化材质和近景动作。",
           "method": "多模型生成关键镜头，后期完成节奏、字幕、音效与产品卖点整理。",
@@ -82,6 +82,20 @@
         "/commerce-mass-02.png"
       ],
       "videos": [
+        {
+          "id": "handmade-wind-chime",
+          "title": "手工风铃",
+          "subtitle": "退役老兵的手作治愈叙事",
+          "src": "/commerce-videos/uploads/collectible-objects/2026-09-10-handmade-wind-chime.mp4",
+          "poster": "",
+          "task": "讲述一位退役老兵在 PTSD 困扰中，通过亲手制作风铃逐步获得疗愈的故事。",
+          "role": "故事创意、分镜规划、AI 画面生成、剪辑包装与成片质检。",
+          "direction": "以手工制作的细节、材质触感与人物情绪为主线，让风铃成为记忆与疗愈的载体。",
+          "method": "组合人物叙事、手部动作与风铃微距镜头，通过克制节奏、环境声和音乐完成情绪递进。",
+          "correction": "重点修正人物一致性、手部动作、风铃结构与镜头间的光线连续性。",
+          "delivery": "竖屏 AI 叙事短视频成片。",
+          "data": "暂未获得投放数据"
+        },
         {
           "id": "coin-film",
           "title": "硬币创意短片",

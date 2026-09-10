@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 import type { VideoCategory } from "../content/video-library";
 
 type CommerceSliderProps = {
@@ -85,9 +86,9 @@ export default function CommerceSlider({ categories }: CommerceSliderProps) {
         }}
       >
         {categories.map((category, index) => (
-          <a
+          <Link
             className={`commerce-card commerce-card--${category.tone} specular-reactive`}
-            href={`/commerce/${category.slug}`}
+            href={`/commerce/${category.slug}/`}
             key={category.slug}
             aria-label={`查看${category.title}视频案例`}
           >
@@ -114,7 +115,7 @@ export default function CommerceSlider({ categories }: CommerceSliderProps) {
               <p>{category.description}</p>
             </div>
             <span className="specular-reactive__fx" aria-hidden="true" />
-          </a>
+          </Link>
         ))}
       </div>
 
