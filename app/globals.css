@@ -23,6 +23,7 @@ html {
 
 body {
   margin: 0;
+  overflow-x: hidden;
   background: var(--ink);
   color: var(--paper);
   font-family:
@@ -42,6 +43,7 @@ a {
 button,
 a {
   -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
 
 ::selection {
@@ -2353,7 +2355,7 @@ a.contact-item:hover {
   }
 
   .site-header {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(0, 1fr) auto;
   }
 
   .header-mail {
@@ -2454,7 +2456,12 @@ a.contact-item:hover {
   }
 
   .contact-pill {
-    padding: 10px 12px;
+    min-height: 44px;
+    padding: 0 14px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
   }
 
   .contact-pill .specular-link__label > span {
@@ -2471,8 +2478,9 @@ a.contact-item:hover {
   }
 
   .hero h1 {
-    font-size: clamp(48px, 14vw, 72px);
-    line-height: 0.9;
+    font-size: clamp(42px, 11.9vw, 56px);
+    line-height: 0.94;
+    letter-spacing: -0.055em;
   }
 
   .hero-rail {
@@ -2502,9 +2510,49 @@ a.contact-item:hover {
     display: none;
   }
 
+  .hero-center > p {
+    max-width: 31ch;
+    margin-inline: auto;
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
   .hero-actions {
+    width: 100%;
+    align-items: stretch;
     flex-direction: column;
     gap: 10px;
+  }
+
+  .hero-cta,
+  .hero-secondary-link {
+    width: min(100%, 310px);
+    min-height: 50px;
+    margin-inline: auto;
+    padding: 0 18px;
+    justify-content: space-between;
+    border: 1px solid rgba(255, 255, 255, 0.54);
+  }
+
+  .hero-secondary-link {
+    background: rgba(7, 8, 10, 0.28);
+    backdrop-filter: blur(10px);
+  }
+
+  .hero-secondary-link:active,
+  .commerce-card:active,
+  .contact-item:active,
+  .archive-header a:active,
+  .archive-footer a:active {
+    transform: scale(0.98);
+  }
+
+  .archive-header a,
+  .archive-footer a,
+  .archive-case-notes summary {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
   }
 
   .section-heading {

@@ -506,16 +506,6 @@ export default function Home() {
             联系我 <span aria-hidden="true">↗</span>
           </SpecularLink>
         </div>
-        <details className="mobile-menu">
-          <summary>菜单</summary>
-          <nav aria-label="移动端主导航">
-            <a href="#commerce">AI 带货视频</a>
-            <a href="#work">工作流搭建</a>
-            <a href="#ability">专业能力</a>
-            <a href="#about">关于我</a>
-            <a href="#contact">联系我</a>
-          </nav>
-        </details>
       </header>
 
       <section className="hero" id="top" tabIndex={-1}>

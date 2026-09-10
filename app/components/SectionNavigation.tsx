@@ -75,11 +75,12 @@ export default function SectionNavigation() {
         type="button"
         aria-expanded={expanded}
         aria-controls="section-navigation-links"
+        aria-label={expanded ? "关闭页面导航" : "打开页面导航"}
         ref={toggle}
         onClick={() => setExpanded((value) => !value)}
       >
         <span aria-hidden="true">{expanded ? "×" : "≡"}</span>
-        {expanded ? "收起" : "板块"}
+        {expanded ? "收起" : "导航"}
       </button>
       <ol className="section-navigation__links" id="section-navigation-links">
         {sections.map(({ id, label }, index) => (
@@ -88,10 +89,7 @@ export default function SectionNavigation() {
               href={`#${id}`}
               aria-label={label}
               aria-current={active === id ? "location" : undefined}
-              onClick={() => {
-                setExpanded(false);
-                document.getElementById(id)?.focus({ preventScroll: true });
-              }}
+              onClick={() => setExpanded(false)}
             >
               <span className="section-navigation__label">{label}</span>
               <span className="section-navigation__index" aria-hidden="true">
