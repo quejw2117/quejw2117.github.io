@@ -22,22 +22,9 @@ export default function CommerceArchiveV2({ category, categories }: CommerceArch
         <Link href="/#commerce">全部分类 ↗</Link>
       </header>
 
-      <section className="archive-hero">
-        <div className="archive-hero__copy">
-          <span>{category.eyebrow}</span>
-          <h1>{category.title}</h1>
-          <strong>{category.subtitle}</strong>
-          <p>{category.description}</p>
-        </div>
-        <div className="archive-hero__media">
-          <img src={category.covers[0]} alt={`${category.title}案例视觉一`} />
-          <img src={category.covers[1]} alt={`${category.title}案例视觉二`} />
-        </div>
-      </section>
-
-      <section className="archive-library">
+      <section className="archive-library archive-library--direct">
         <div className="archive-library__heading">
-          <span>VIDEO ARCHIVE / 01-{archiveEnd}</span>
+          <span>{category.title} / VIDEO ARCHIVE / 01-{archiveEnd}</span>
           <h2>过往视频案例</h2>
           <p>
             {category.videos.length
