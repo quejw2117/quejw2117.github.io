@@ -60,11 +60,14 @@ export default function CommerceSlider({ categories }: CommerceSliderProps) {
   return (
     <div className="commerce-slider" aria-roledescription="轮播图">
       <div className="commerce-slider__toolbar">
-        <p>
-          <span>{String(activeIndex + 1).padStart(2, "0")}</span>
-          <span>/</span>
-          <span>{String(categories.length).padStart(2, "0")}</span>
-        </p>
+        <div className="commerce-slider__status">
+          <p>
+            <span>{String(activeIndex + 1).padStart(2, "0")}</span>
+            <span>/</span>
+            <span>{String(categories.length).padStart(2, "0")}</span>
+          </p>
+          <span className="commerce-slider__hint">可点击参考过往爆款视频案例</span>
+        </div>
         <div className="commerce-slider__buttons" aria-label="切换视频分类">
           <button type="button" onClick={() => goTo(activeIndex - 1)} aria-label="上一个分类">
             ←
