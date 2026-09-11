@@ -11,6 +11,7 @@ type CommerceSliderProps = {
 export default function CommerceSlider({ categories }: CommerceSliderProps) {
   const trackRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
+  const usesSplitLayout = categories.length === 2;
 
   useEffect(() => {
     const track = trackRef.current;
@@ -58,7 +59,10 @@ export default function CommerceSlider({ categories }: CommerceSliderProps) {
   };
 
   return (
-    <div className="commerce-slider" aria-roledescription="轮播图">
+    <div
+      className={`commerce-slider${usesSplitLayout ? " commerce-slider--split" : ""}`}
+      aria-roledescription="轮播图"
+    >
       <div className="commerce-slider__toolbar">
         <div className="commerce-slider__status">
           <p>

@@ -2908,6 +2908,22 @@ a.contact-item:hover {
 .commerce-slider .commerce-card__media,
 .commerce-slider .commerce-card--luxury .commerce-card__media { aspect-ratio: 16 / 10; }
 
+.commerce-slider--split .commerce-grid {
+  --commerce-split-gap: clamp(18px, 2.2vw, 36px);
+  overflow: visible;
+  gap: var(--commerce-split-gap);
+  margin-right: 0;
+  padding-right: 0;
+}
+
+.commerce-slider--split .commerce-card,
+.commerce-slider--split .commerce-card--luxury {
+  flex-basis: calc((100% - var(--commerce-split-gap)) / 2);
+}
+
+.commerce-slider--split .commerce-slider__buttons,
+.commerce-slider--split .commerce-slider__pagination { display: none; }
+
 .commerce-card__copy strong {
   display: block;
   margin: -1px 0 12px;
@@ -3056,6 +3072,18 @@ a.contact-item:hover {
 
   .commerce-slider .commerce-card,
   .commerce-slider .commerce-card--luxury { flex-basis: min(86vw, 410px); }
+
+  .commerce-slider--split .commerce-grid {
+    overflow-x: auto;
+    margin-right: min(0px, calc((var(--shell) - 100vw) / 2));
+    padding-right: max(16px, calc(100% - min(86vw, 410px)));
+  }
+
+  .commerce-slider--split .commerce-card,
+  .commerce-slider--split .commerce-card--luxury { flex-basis: min(86vw, 410px); }
+
+  .commerce-slider--split .commerce-slider__buttons,
+  .commerce-slider--split .commerce-slider__pagination { display: flex; }
 
   .commerce-slider__toolbar {
     align-items: flex-end;
