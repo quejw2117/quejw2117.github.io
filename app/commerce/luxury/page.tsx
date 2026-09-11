@@ -19,14 +19,14 @@ export default function LuxuryArchivePage() {
       tone="luxury"
       cases={[
         {
-          title: "蓝宝石珠宝",
-          src: "/commerce-videos/luxury-01.mp4",
-          poster: "/commerce-videos/luxury-01.jpg",
-          task: "围绕蓝宝石的色泽、切面与镶嵌细节制作高价值感商品影像。",
+          title: "方钻珠宝",
+          src: "/commerce-videos/uploads/luxury/2026-09-11-jewelry.mp4",
+          poster: "/commerce-videos/uploads/luxury/2026-09-11-jewelry.jpg",
+          task: "围绕方形切割宝石的轮廓、切面与佩戴效果制作高价值感商品影像。",
           role: "视觉方向、分镜设计、AI 生成、材质质检、调色与成片交付。",
-          direction: "采用暗场珠宝广告语言，以微距和克制镜头突出宝石光泽。",
-          method: "多模型测试宝石与金属材质，后期统一黑位、冷暖光和镜头节奏。",
-          correction: "重点修正宝石颜色、切面反射、金属爪镶和链条结构。",
+          direction: "采用暗场珠宝广告语言，以微距、折射高光与佩戴镜头突出宝石光泽。",
+          method: "组合宝石微距与佩戴场景，后期统一黑位、高光、声音和镜头节奏。",
+          correction: "重点控制宝石切面反射、金属镶嵌、链条结构和画面高光。",
           delivery: "9:16 高奢珠宝类 AI 商业短视频成片。",
           data: "暂未获得投放数据",
         },
