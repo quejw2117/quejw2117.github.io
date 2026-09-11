@@ -1116,8 +1116,13 @@ a {
   min-width: 0;
   overflow: hidden;
   color: inherit;
+  cursor: pointer;
   text-decoration: none;
   will-change: transform, opacity, clip-path;
+}
+
+.commerce-card > * {
+  pointer-events: none;
 }
 
 .commerce-card--luxury {

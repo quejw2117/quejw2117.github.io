@@ -94,7 +94,7 @@ export default function CommerceArchiveV2({ category, categories }: CommerceArch
       </section>
 
       <nav className="archive-switcher" aria-label="视频分类快捷导航">
-        <Link href={`/commerce/${previous.slug}`} aria-label={`上一个分类：${previous.title}`}>
+        <Link href={`/commerce/${previous.slug}/`} aria-label={`上一个分类：${previous.title}`}>
           <span>← PREV</span><strong>{previous.title}</strong>
         </Link>
         <details>
@@ -104,13 +104,13 @@ export default function CommerceArchiveV2({ category, categories }: CommerceArch
           </summary>
           <div>
             {categories.map((item, index) => (
-              <Link href={`/commerce/${item.slug}`} key={item.slug} aria-current={item.slug === category.slug ? "page" : undefined}>
+              <Link href={`/commerce/${item.slug}/`} key={item.slug} aria-current={item.slug === category.slug ? "page" : undefined}>
                 <span>{String(index + 1).padStart(2, "0")}</span>{item.title}
               </Link>
             ))}
           </div>
         </details>
-        <Link href={`/commerce/${next.slug}`} aria-label={`下一个分类：${next.title}`}>
+        <Link href={`/commerce/${next.slug}/`} aria-label={`下一个分类：${next.title}`}>
           <span>NEXT →</span><strong>{next.title}</strong>
         </Link>
       </nav>
