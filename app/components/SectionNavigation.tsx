@@ -6,7 +6,7 @@ import "./section-navigation.css";
 const sections = [
   { id: "top", label: "首页" },
   { id: "about", label: "关于我" },
-  { id: "commerce", label: "AI 带货视频" },
+  { id: "commerce", label: "AI 商业视频" },
   { id: "work", label: "工作流搭建" },
   { id: "creative-research", label: "创意迭代" },
   { id: "ability", label: "专业能力" },

@@ -474,7 +474,7 @@ export default function Home() {
           QUE JIAWEI<span>/26</span>
         </a>
         <nav aria-label="主导航">
-          <a href="#commerce">AI 带货视频</a>
+          <a href="#commerce">AI 商业视频</a>
           <a href="#work">工作流搭建</a>
           <a href="#ability">专业能力</a>
           <a href="#about">关于我</a>
@@ -637,17 +637,17 @@ export default function Home() {
             className="section-display section-display--commerce"
             aria-hidden="true"
           >
-            <span>AI COMMERCE</span>
+            <span>AI VIDEO</span>
           </div>
           <div className="section-heading section-heading--split">
             <div>
               <span>02 / AI COMMERCE FILMS</span>
-              <h2>AI 带货视频</h2>
+              <h2>AI 商业视频</h2>
             </div>
             <p>
-              从日用好物、家居清洁到收藏视觉与高奢珠宝，以分类幻灯片快速浏览不同商业方向。
+              从爆款结构复刻到品牌概念表达，以两个入口集中呈现商业视频创作方向。
               <br />
-              点击任意分类查看对应视频，并可在详情页随时切换到其他分类。
+              点击左侧查看 TikTok 爆款复刻，点击右侧查看创意广告与 TVC 案例。
             </p>
           </div>
 

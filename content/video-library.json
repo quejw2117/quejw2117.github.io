@@ -1,11 +1,11 @@
 {
   "categories": [
     {
-      "slug": "mass-market",
-      "eyebrow": "DAILY COMMERCE / PRODUCT DEMO",
-      "title": "日用好物",
-      "subtitle": "清晰卖点与使用演示",
-      "description": "用问题、操作与结果的短链路，让日用商品的核心卖点在几秒内被看懂。",
+      "slug": "tiktok-remakes",
+      "eyebrow": "TIKTOK PERFORMANCE / VIRAL REMAKE",
+      "title": "TikTok 爆款复刻",
+      "subtitle": "爆款结构拆解与视觉复刻",
+      "description": "拆解高表现短视频的钩子、节奏与卖点结构，再以 AI 生成和后期制作完成适配商品的复刻成片。",
       "tone": "mass",
       "covers": [
         "/commerce-mass-01.png",
@@ -25,21 +25,7 @@
           "correction": "重点修正手部动作、工具结构、胶体质感与前后镜头连续性。",
           "delivery": "9:16 大众消费类 AI 电商短视频成片。",
           "data": "暂未获得投放数据"
-        }
-      ]
-    },
-    {
-      "slug": "home-cleaning",
-      "eyebrow": "HOME CARE / CLEANING SOLUTIONS",
-      "title": "家居清洁",
-      "subtitle": "痛点对比与动作冲击",
-      "description": "以油污、水流和清洁前后对比建立视觉钩子，快速说明工具与清洁产品的使用价值。",
-      "tone": "mass",
-      "covers": [
-        "/commerce-videos/mass-02.jpg",
-        "/commerce-videos/mass-03.jpg"
-      ],
-      "videos": [
+        },
         {
           "id": "grill-cleaner",
           "title": "烧烤炉架清洁剂",
@@ -67,21 +53,7 @@
           "correction": "重点修正枪体、软管连接、水流方向与产品比例的一致性。",
           "delivery": "9:16 大众消费类 AI 电商短视频成片。",
           "data": "暂未获得投放数据"
-        }
-      ]
-    },
-    {
-      "slug": "collectible-objects",
-      "eyebrow": "COLLECTIBLES / MATERIAL STORY",
-      "title": "收藏与质感",
-      "subtitle": "微距材质与仪式感",
-      "description": "通过微距、反射与克制的镜头节奏，把普通物件转化为更具观看价值的收藏视觉。",
-      "tone": "mass",
-      "covers": [
-        "/commerce-videos/mass-04.jpg",
-        "/commerce-mass-02.png"
-      ],
-      "videos": [
+        },
         {
           "id": "handmade-wind-chime",
           "title": "手工风铃",
@@ -109,21 +81,7 @@
           "correction": "校正硬币纹样、边缘形态、手指接触关系与镜头间尺寸变化。",
           "delivery": "9:16 大众消费类 AI 电商短视频成片。",
           "data": "暂未获得投放数据"
-        }
-      ]
-    },
-    {
-      "slug": "luxury",
-      "eyebrow": "HIGH JEWELRY / LUXURY VISUAL",
-      "title": "高奢珠宝",
-      "subtitle": "材质、布光与品牌感",
-      "description": "以珠宝、贵金属和高价值商品为核心，用精确布光与克制节奏建立收藏感。",
-      "tone": "luxury",
-      "covers": [
-        "/commerce-luxury-01.png",
-        "/commerce-luxury-02.png"
-      ],
-      "videos": [
+        },
         {
           "id": "faceted-gem-jewelry",
           "title": "方钻珠宝",
@@ -178,6 +136,76 @@
           "method": "生成陈列、旋转和微距镜头，后期统一速度、光泽、调色与音效。",
           "correction": "校正产品尺度、金属反射、宝石形态和连续镜头中的结构漂移。",
           "delivery": "9:16 高奢珠宝类 AI 商业短视频成片。",
+          "data": "暂未获得投放数据"
+        }
+      ]
+    },
+    {
+      "slug": "creative-tvc",
+      "eyebrow": "CREATIVE ADVERTISING / TVC",
+      "title": "创意广告 TVC",
+      "subtitle": "品牌概念与情绪叙事",
+      "description": "以品牌气质、视觉概念和情绪节奏为核心，完成从创意设定到成片交付的 AI 广告与 TVC。",
+      "tone": "mass",
+      "covers": [
+        "/commerce-videos/uploads/creative-tvc/creative-tvc-cover-01.jpg",
+        "/commerce-videos/uploads/creative-tvc/creative-tvc-cover-02.jpg"
+      ],
+      "videos": [
+        {
+          "id": "chanel-hand-cream-concept",
+          "title": "香奈儿护手霜概念片",
+          "subtitle": "静物机关与悬念揭示",
+          "src": "/commerce-videos/uploads/creative-tvc/creative-tvc-01.mp4",
+          "poster": "/commerce-videos/uploads/creative-tvc/creative-tvc-01.jpg",
+          "task": "围绕蛋形护手霜包装制作一支短时长概念广告，在单一场景中建立产品记忆点。",
+          "role": "创意设定、镜头设计、AI 画面生成、动作衔接、声音与成片包装。",
+          "direction": "将产品造型转化为视觉机关，以拿取、旋转和破壳式揭示制造悬念。",
+          "method": "统一静物台面、手部动作与包装尺度，后期控制节奏、质感和品牌露出。",
+          "correction": "重点修正手指接触、包装文字、蛋壳变化与镜头间物体位置。",
+          "delivery": "3:4 AI 美妆创意广告成片。",
+          "data": "暂未获得投放数据"
+        },
+        {
+          "id": "fashion-transition-film",
+          "title": "造型变装短片",
+          "subtitle": "转场节奏与人物一致性",
+          "src": "/commerce-videos/uploads/creative-tvc/creative-tvc-02.mp4",
+          "poster": "/commerce-videos/uploads/creative-tvc/creative-tvc-02.jpg",
+          "task": "以快速变装展示多套时尚造型，在竖屏短片中保持人物识别和动作连贯。",
+          "role": "转场构思、人物与服装生成、动作匹配、节奏剪辑和成片质检。",
+          "direction": "以手势遮挡和镜头推进作为转场钩子，让造型变化紧贴音乐节拍。",
+          "method": "分段生成不同服装状态，后期对齐人物位置、动作方向与转场时机。",
+          "correction": "重点修正人物面部、肢体比例、服装结构和相邻镜头的空间连续性。",
+          "delivery": "9:16 AI 时尚创意短片。",
+          "data": "暂未获得投放数据"
+        },
+        {
+          "id": "anti-aging-concept-film",
+          "title": "抗衰主题概念片",
+          "subtitle": "情绪叙事与光影装置",
+          "src": "/commerce-videos/uploads/creative-tvc/creative-tvc-03.mp4",
+          "poster": "/commerce-videos/uploads/creative-tvc/creative-tvc-03.jpg",
+          "task": "围绕年龄、时间与抗衰议题制作一支具有叙事感和艺术氛围的品牌概念片。",
+          "role": "主题提炼、分镜叙事、人物与场景生成、剪辑、字幕和声音设计。",
+          "direction": "使用冷色雾场、光柱与克制表演，将抽象议题转化为连续的视觉隐喻。",
+          "method": "组合人物特写、装置空间与文字段落，后期统一黑位、光色和情绪节奏。",
+          "correction": "重点控制人物一致性、光源方向、空间尺度和长片段之间的叙事衔接。",
+          "delivery": "3:4 AI 品牌主题概念片。",
+          "data": "暂未获得投放数据"
+        },
+        {
+          "id": "chanel-coastal-holiday",
+          "title": "香奈儿海岸假日",
+          "subtitle": "窥镜视角与度假场景",
+          "src": "/commerce-videos/uploads/creative-tvc/creative-tvc-04.mp4",
+          "poster": "/commerce-videos/uploads/creative-tvc/creative-tvc-04.jpg",
+          "task": "将时装配饰置入海岸度假场景，制作具有观察感和编辑感的品牌短片。",
+          "role": "视觉概念、场景与产品生成、镜头编排、版式包装和成片质检。",
+          "direction": "以双筒望远镜视角串联海面、沙滩和手袋，把产品植入轻松的旅行叙事。",
+          "method": "生成多组海岸场景与产品镜头，后期统一窥镜遮罩、画面文字和运动节奏。",
+          "correction": "重点修正品牌标识、产品结构、海面反射和不同场景的色彩连续性。",
+          "delivery": "3:4 AI 时尚品牌创意广告成片。",
           "data": "暂未获得投放数据"
         }
       ]
