@@ -92,7 +92,7 @@
   }
 }
 
-@media (max-width: 700px), (max-height: 520px), (hover: none) {
+@media (max-width: 860px), (max-height: 520px), (hover: none) {
   .section-navigation {
     top: auto;
     bottom: max(14px, env(safe-area-inset-bottom));

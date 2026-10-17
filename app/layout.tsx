@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import "./taste-upgrade.css";
+import "./hr-preview.css";
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://que-jiawei-portfolio.quejw2117.chatgpt.site"),
@@ -32,7 +33,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="zh-CN">
-      <body>{children}</body>
+      <body className="hr-portfolio">{children}</body>
     </html>
   );
 }

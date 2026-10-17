@@ -5,12 +5,10 @@ import "./section-navigation.css";
 
 const sections = [
   { id: "top", label: "首页" },
+  { id: "commerce", label: "视频作品" },
+  { id: "work", label: "制作方法" },
   { id: "about", label: "关于我" },
-  { id: "commerce", label: "AI 商业视频" },
-  { id: "work", label: "工作流搭建" },
-  { id: "creative-research", label: "创意迭代" },
-  { id: "ability", label: "专业能力" },
-  { id: "contact", label: "联系我" },
+  { id: "contact", label: "面试联系" },
 ];
 
 export default function SectionNavigation() {

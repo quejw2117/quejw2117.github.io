@@ -234,28 +234,6 @@ export default function Home() {
         },
       );
 
-      gsap.fromTo(
-        ".stats-grid > div",
-        {
-          y: 110,
-          scaleY: 0.82,
-          autoAlpha: 0,
-          transformOrigin: "50% 100%",
-        },
-        {
-          y: 0,
-          scaleY: 1,
-          autoAlpha: 1,
-          duration: 1.15,
-          stagger: 0.12,
-          ease: "power4.out",
-          scrollTrigger: {
-            trigger: ".stats-grid",
-            start: "top 84%",
-            once: true,
-          },
-        },
-      );
 
       gsap.utils.toArray<HTMLElement>(".project-card").forEach((card, index) => {
         const visual = card.querySelector<HTMLElement>(".project-visual");
@@ -470,12 +448,12 @@ export default function Home() {
         <span>SHENZHEN, CHINA</span>
       </div>
       <header className="site-header">
-        <a className="brand-mark" href="#top" aria-label="Back to home">
+        <a className="brand-mark" href="#top" aria-label="返回首页">
           QUE JIAWEI<span>/26</span>
         </a>
         <nav aria-label="主导航">
-          <a href="#commerce">AI 商业视频</a>
-          <a href="#work">工作流搭建</a>
+          <a href="#commerce">视频作品</a>
+          <a href="#work">制作方法</a>
           <a href="#ability">专业能力</a>
           <a href="#about">关于我</a>
         </nav>
@@ -496,138 +474,40 @@ export default function Home() {
           muted
           loop
           playsInline
-          preload="auto"
-          poster=""
+          preload="metadata"
+          poster="/hero-poster.jpg"
           aria-hidden="true"
         >
           <source src="/hero-background.mp4" type="video/mp4" />
         </video>
         <div className="hero-fallback" aria-hidden="true" />
         <div className="hero-shade" aria-hidden="true" />
-        <div className="hero-grid" aria-hidden="true" />
 
         <div className="hero-content page-shell">
           <div className="hero-center">
-            <div className="hero-kicker">
-              AI VIDEO DESIGN · ECOMMERCE CREATIVE
-            </div>
             <h1>
               <span className="hero-title-line">
-                <span>Ideas become</span>
+                <span>阙嘉炜</span>
               </span>
-              <span className="hero-title-line hero-title-line--serif">
-                <span>visual systems.</span>
+              <span className="hero-title-line hero-title-line--role">
+                <span>AIGC 视频制作师</span>
               </span>
             </h1>
             <p>
-              AI 视频设计师 / 视觉设计师
+              专注 TikTok 爆款复刻与创意广告 TVC。
               <br />
-              用生成式影像与可复用工作流，让电商创意高效落地。
+              从参考拆解、分镜生成到后期剪辑，完成可交付的商业影像。
             </p>
             <div className="hero-actions">
               <SpecularLink className="hero-cta" href="#commerce" radius={2}>
-                VIEW AI COMMERCE FILMS <span aria-hidden="true">↘</span>
+                查看视频作品 <span aria-hidden="true">↘</span>
               </SpecularLink>
               <a className="hero-secondary-link" href="#work">
-                OTHER SELECTED WORK <span aria-hidden="true">↘</span>
+                了解制作方法 <span aria-hidden="true">↘</span>
               </a>
             </div>
           </div>
 
-        </div>
-      </section>
-
-      <section className="about section-space" id="about" tabIndex={-1}>
-        <div className="page-shell">
-          <div className="section-display section-display--dark" aria-hidden="true">
-            <span>PROFILE</span>
-          </div>
-          <div className="section-heading">
-            <span>01 / PROFILE</span>
-            <h2>
-              不止设计画面，
-              <br />
-              更设计<span className="accent-text">解决问题的路径。</span>
-            </h2>
-          </div>
-
-          <div className="about-grid">
-            <figure className="profile-portrait">
-              <div className="profile-portrait-frame">
-                <img
-                  src="/avatar-cartoon.png"
-                  alt="阙嘉炜的卡通形象"
-                  width="1254"
-                  height="1254"
-                />
-              </div>
-              <figcaption>
-                <span>QUE JIAWEI</span>
-                <span>AI VIDEO / VISUAL DESIGNER</span>
-              </figcaption>
-            </figure>
-            <div className="about-copy">
-              <p className="lead">
-                我拥有数字媒体艺术背景，工作横跨视觉创作、新媒体增长与
-                AIGC 商业影像。相比单点执行，我更擅长把创意整理成可以稳定复用的系统。
-              </p>
-              <p>
-                从品牌海报、内容栏目到跨境电商短视频，我关注每个视觉决策与最终业务结果之间的联系。
-                目前持续探索 AI 在创意生产、角色一致性和批量内容交付中的真实价值。
-              </p>
-
-              <div className="experience-list">
-                <article>
-                  <time>2026.06 - NOW</time>
-                  <div>
-                    <h3>AIGC 视频制作师</h3>
-                    <p>跨境电商商业短视频 / 策划 / 分镜 / 生成 / 品控</p>
-                  </div>
-                </article>
-                <article>
-                  <time>2025.11 - 2026.04</time>
-                  <div>
-                    <h3>新媒体运营</h3>
-                    <p>国创文化（深圳）科技有限公司</p>
-                  </div>
-                </article>
-                <article>
-                  <time>2024.07 - 2025.10</time>
-                  <div>
-                    <h3>自主创业 / 淘宝服装零售</h3>
-                    <p>淘宝店铺运营 / 服装销售 / 视觉呈现 / 社交媒体宣传与发布</p>
-                  </div>
-                </article>
-                <article>
-                  <time>2023.06 - 2025.08</time>
-                  <div>
-                    <h3>美术老师 / 内容推广</h3>
-                    <p>凯琪艺术培训有限公司</p>
-                  </div>
-                </article>
-              </div>
-
-            </div>
-          </div>
-
-          <div className="stats-grid" aria-label="项目成果数据">
-            <div>
-              <strong>200<sup>+</sup></strong>
-              <span>标准化分镜脚本</span>
-            </div>
-            <div>
-              <strong>150<sup>+</sup></strong>
-              <span>月均商业视频</span>
-            </div>
-            <div>
-              <strong>96<sup>%</sup></strong>
-              <span>商品造型还原</span>
-            </div>
-            <div>
-              <strong>80<sup>%+</sup></strong>
-              <span>生产效率提升</span>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -642,12 +522,12 @@ export default function Home() {
           <div className="section-heading section-heading--split">
             <div>
               <span>02 / AI COMMERCE FILMS</span>
-              <h2>AI 商业视频</h2>
+              <h2>视频作品</h2>
             </div>
             <p>
-              从爆款结构复刻到品牌概念表达，以两个入口集中呈现商业视频创作方向。
+              从生活场景中的商品演示，到品牌概念与情绪叙事。
               <br />
-              点击左侧查看 TikTok 爆款复刻，点击右侧查看创意广告与 TVC 案例。
+              两个创作方向，直接观看完整作品。
             </p>
           </div>
 
@@ -663,12 +543,12 @@ export default function Home() {
           <div className="section-heading section-heading--split">
             <div>
               <span>03 / WORKFLOW SYSTEM</span>
-              <h2>工作流搭建</h2>
+              <h2>从参考到成片</h2>
             </div>
             <p>
-              从即梦与多模型测试，到分镜生成、人物与产品一致性控制，再到失败修正和 AI 素材质检。
+              拆解参考、规划分镜、生成素材，再完成剪辑与质检。
               <br />
-              最终沉淀为可复用 SOP、交付清单与内部分享，保留完整的 4 STEP WORKFLOW 设计语言。
+              把每一次修正整理为下一次创作可复用的方法。
             </p>
           </div>
 
@@ -733,15 +613,11 @@ export default function Home() {
             <div>
               <span>05 / CAPABILITIES</span>
               <h2>
-                从生成到交付，
-                <br />
-                形成完整闭环。
+                能够完成的工作
               </h2>
             </div>
             <p>
-              生成、分镜、一致性、后期、研究与 SOP，
-              <br />
-              每项能力都指向更稳定、更可复用的电商视频交付。
+              围绕商业短视频制作，覆盖分镜、生成、一致性控制与后期交付。
             </p>
           </div>
           <div className="capability-grid">
@@ -764,6 +640,80 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="about section-space" id="about" tabIndex={-1}>
+        <div className="page-shell">
+          <div className="section-display section-display--dark" aria-hidden="true">
+            <span>PROFILE</span>
+          </div>
+          <div className="section-heading">
+            <span>01 / PROFILE</span>
+            <h2>
+              关于我
+            </h2>
+          </div>
+
+          <div className="about-grid">
+            <figure className="profile-portrait">
+              <div className="profile-portrait-frame">
+                <img
+                  src="/avatar-cartoon.png"
+                  alt="阙嘉炜的卡通形象"
+                  width="1254"
+                  height="1254"
+                />
+              </div>
+              <figcaption>
+                <span>QUE JIAWEI</span>
+                <span>AI VIDEO / VISUAL DESIGNER</span>
+              </figcaption>
+            </figure>
+            <div className="about-copy">
+              <p className="lead">
+                数字媒体艺术背景，
+                近期专注 AIGC 商业视频制作。
+              </p>
+              <p>
+                经历横跨视觉创作、新媒体运营与跨境电商内容。
+                目前持续探索 AI 在人物与产品一致性、镜头表达和成片交付中的实际应用。
+              </p>
+
+              <div className="experience-list">
+                <article>
+                  <time>2026.06 - NOW</time>
+                  <div>
+                    <h3>AIGC 视频制作师</h3>
+                    <p>跨境电商商业短视频 / 策划 / 分镜 / 生成 / 品控</p>
+                  </div>
+                </article>
+                <article>
+                  <time>2025.11 - 2026.04</time>
+                  <div>
+                    <h3>新媒体运营</h3>
+                    <p>国创文化（深圳）科技有限公司</p>
+                  </div>
+                </article>
+                <article>
+                  <time>2024.07 - 2025.10</time>
+                  <div>
+                    <h3>自主创业 / 淘宝服装零售</h3>
+                    <p>淘宝店铺运营 / 服装销售 / 视觉呈现 / 社交媒体宣传与发布</p>
+                  </div>
+                </article>
+                <article>
+                  <time>2023.06 - 2025.08</time>
+                  <div>
+                    <h3>美术老师 / 内容推广</h3>
+                    <p>凯琪艺术培训有限公司</p>
+                  </div>
+                </article>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </section>
+
       <footer className="contact-section" id="contact" tabIndex={-1}>
         <div className="contact-noise" aria-hidden="true" />
         <div className="page-shell contact-inner">
@@ -771,11 +721,11 @@ export default function Home() {
             <span>CONTACT</span>
           </div>
           <div className="contact-top">
-            <span>06 / CONTACT</span>
-            <span>LET&apos;S CREATE SOMETHING MEANINGFUL.</span>
+            <span>面试联系</span>
+            <span>QUE JIAWEI / AIGC VIDEO</span>
           </div>
           <div className="contact-center">
-            <p>有一个值得被看见的想法？</p>
+            <p>欢迎就作品细节、制作流程与岗位匹配进一步交流。</p>
             <a className="contact-link-mask" href="mailto:1427954145@qq.com">
               <span>
                 联系我

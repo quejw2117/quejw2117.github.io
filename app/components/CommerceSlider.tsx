@@ -61,7 +61,7 @@ export default function CommerceSlider({ categories }: CommerceSliderProps) {
   return (
     <div
       className={`commerce-slider${usesSplitLayout ? " commerce-slider--split" : ""}`}
-      aria-roledescription="轮播图"
+      aria-roledescription={usesSplitLayout ? undefined : "轮播图"}
     >
       <div className="commerce-slider__toolbar">
         <div className="commerce-slider__status">
@@ -70,7 +70,7 @@ export default function CommerceSlider({ categories }: CommerceSliderProps) {
             <span>/</span>
             <span>{String(categories.length).padStart(2, "0")}</span>
           </p>
-          <span className="commerce-slider__hint">可点击参考过往爆款视频案例</span>
+          <span className="commerce-slider__hint">选择一个创作方向，观看完整成片。</span>
         </div>
         <div className="commerce-slider__buttons" aria-label="切换视频分类">
           <button type="button" onClick={() => goTo(activeIndex - 1)} aria-label="上一个分类">
@@ -113,10 +113,10 @@ export default function CommerceSlider({ categories }: CommerceSliderProps) {
               <span className="commerce-card__index">
                 {String(index + 1).padStart(2, "0")}
               </span>
-              <span className="commerce-card__open">VIEW ARCHIVE ↗</span>
+              <span className="commerce-card__open">查看案例 ↗</span>
             </div>
             <div className="commerce-card__copy">
-              <span>{category.eyebrow}</span>
+              <span>{category.videos.length} 支作品</span>
               <h3>{category.title}</h3>
               <strong>{category.subtitle}</strong>
               <p>{category.description}</p>
