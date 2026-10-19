@@ -3,7 +3,7 @@
 .hr-portfolio :is(a, button, summary):focus-visible { outline: 2px solid var(--accent); outline-offset: 5px; }
 .hr-portfolio .page-shell { width: min(1440px, calc(100% - 96px)); }
 .hr-portfolio .promo-bar { width: min(1440px, calc(100% - 96px)); font-size: 11px; letter-spacing: .1em; }
-.hr-portfolio .site-header { width: min(1440px, calc(100% - 96px)); height: 72px; top: 38px; }
+.hr-portfolio .site-header { position: absolute; width: min(1440px, calc(100% - 96px)); height: 72px; top: 38px; }
 .hr-portfolio .site-header nav { font-size: 16px; gap: 30px; }
 .hr-portfolio .site-header nav a { min-height: 44px; }
 .hr-portfolio .header-mail, .hr-portfolio .contact-pill { font-size: 14px; }
