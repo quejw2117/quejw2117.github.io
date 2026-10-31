@@ -494,7 +494,7 @@ export default function Home() {
               </span>
             </h1>
             <p>
-              专注 TikTok 爆款复刻与创意广告 TVC。
+              专注 TikTok 商品短视频与创意广告 TVC。
               <br />
               从参考拆解、分镜生成到后期剪辑，完成可交付的商业影像。
             </p>
