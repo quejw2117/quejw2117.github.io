@@ -19,7 +19,7 @@ const projects = [
     metric: "4 STEP WORKFLOW",
     className:
       "project-visual project-visual--signal project-visual--with-media",
-    cover: "/workflow-tool-ui.png",
+    cover: "/workflow-video-ui.png",
   },
   {
     index: "02",
