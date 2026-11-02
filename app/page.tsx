@@ -6,6 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SpecularLink from "./components/SpecularLink";
 import SectionNavigation from "./components/SectionNavigation";
 import CommerceSlider from "./components/CommerceSlider";
+import CodexWorkflow from "./components/CodexWorkflow";
 import { videoLibrary } from "./content/video-library";
 
 const projects = [
@@ -68,9 +69,9 @@ const capabilities = [
   },
   {
     number: "A.06",
-    title: "SOP 沉淀与内部分享",
-    text: "记录提示词、失败样本、修正方法与质检标准，整理为可复用模板、交付清单和团队内部分享材料。",
-    tools: "SOP / Failure Log / QA Checklist",
+    title: "Codex 技能沉淀与流程复用",
+    text: "结合 Codex 整理处理脚本、操作规则与质检清单，把重复任务沉淀为可复用的 Skill 和 SOP。",
+    tools: "Codex / SKILL.md / SOP / QA Checklist",
   },
 ];
 
@@ -548,7 +549,7 @@ export default function Home() {
             <p>
               拆解参考、规划分镜、生成素材，再完成剪辑与质检。
               <br />
-              把每一次修正整理为下一次创作可复用的方法。
+              结合 Codex，把重复操作与质检要求整理为可复用的 Skill 和 SOP。
             </p>
           </div>
 
@@ -600,6 +601,7 @@ export default function Home() {
                 </div>
               </article>
             ))}
+            <CodexWorkflow />
           </div>
         </div>
       </section>

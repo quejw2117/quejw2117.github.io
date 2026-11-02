@@ -1,0 +1,42 @@
+/* Codex workflow extends the portfolio's existing dark and lime visual system. */
+.hr-portfolio .codex-workflow {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 44px clamp(32px, 5vw, 80px);
+  padding-top: 56px;
+  border-top: 1px solid var(--line);
+  scroll-margin-top: 36px;
+}
+.codex-workflow > * { min-width: 0; }
+.codex-workflow__intro h3 { margin: 0 0 22px; font-size: clamp(30px, 3.2vw, 46px); font-weight: 550; line-height: 1.3; letter-spacing: -.03em; }
+.codex-workflow__intro h3 span { display: block; color: var(--accent); }
+.codex-workflow__intro p { margin: 0 0 16px; max-width: 38em; color: #b0b4bc; font-size: 16px; line-height: 1.85; }
+.codex-workflow__intro h3 + p { color: #e1e3de; font-size: 18px; }
+.codex-workflow__link { display: inline-flex; gap: 16px; align-items: center; min-height: 44px; margin-top: 6px; color: var(--accent); font-size: 15px; text-decoration: underline; text-underline-offset: 6px; }
+.codex-workflow__link:hover { color: var(--paper); }
+.codex-workflow__steps { list-style: none; margin: 0; padding: 0; }
+.codex-workflow__steps li { display: grid; grid-template-columns: 40px minmax(0, 1fr); gap: 16px; padding: 20px 0; border-bottom: 1px solid var(--line); }
+.codex-workflow__steps li:first-child { padding-top: 0; }
+.codex-workflow__step-number { color: var(--accent); font-size: 14px; font-variant-numeric: tabular-nums; line-height: 1.8; }
+.codex-workflow__steps h4 { margin: 0 0 6px; font-size: 20px; font-weight: 550; line-height: 1.4; }
+.codex-workflow__steps p { margin: 0; color: #b0b4bc; font-size: 15px; line-height: 1.8; }
+.codex-workflow__example { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 32px clamp(32px, 5vw, 80px); padding: 32px 0 0; border-top: 1px solid var(--line); scroll-margin-top: 32px; }
+.codex-workflow__example h4 { margin: 0 0 12px; font-size: 21px; font-weight: 550; line-height: 1.5; }
+.codex-workflow__example p { margin: 0 0 12px; color: #b0b4bc; font-size: 15px; line-height: 1.85; }
+.codex-workflow__example .codex-workflow__outcome { color: #d8dbd1; }
+.codex-workflow__skill summary { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 48px; cursor: pointer; list-style: none; color: #e1e3de; font-size: 16px; }
+.codex-workflow__skill summary::-webkit-details-marker { display: none; }
+.codex-workflow__skill summary svg { flex-shrink: 0; color: var(--accent); }
+.codex-workflow__skill[open] summary svg { transform: rotate(45deg); }
+.codex-workflow__skill summary:hover { color: var(--accent); }
+.codex-workflow__skill dl { margin: 12px 0 0; }
+.codex-workflow__skill dl > div { padding: 14px 0; border-top: 1px solid var(--line); }
+.codex-workflow__skill dt { margin: 0 0 6px; color: #d8dbd1; font-size: 14px; }
+.codex-workflow__skill dd { margin: 0; color: #b0b4bc; font-size: 15px; line-height: 1.8; overflow-wrap: anywhere; }
+@media (max-width: 700px) {
+  .hr-portfolio .codex-workflow { grid-template-columns: minmax(0, 1fr); gap: 32px; padding-top: 36px; }
+  .codex-workflow__intro h3 { font-size: 32px; }
+  .codex-workflow__steps li { grid-template-columns: 32px minmax(0, 1fr); gap: 12px; }
+  .codex-workflow__example { grid-template-columns: minmax(0, 1fr); gap: 16px; padding-top: 26px; }
+  .codex-workflow__example h4 { font-size: 20px; }
+}

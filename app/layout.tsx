@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import "./taste-upgrade.css";
 import "./hr-preview.css";
+import "./codex-workflow.css";
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://que-jiawei-portfolio.quejw2117.chatgpt.site"),
