@@ -69,7 +69,7 @@ export default function CommerceArchivePlayer({ category, categories }: Props) {
             const notes = getNotes(video);
             return (
               <article className="film-card" key={video.id} data-playing={playingId === video.id}>
-                <div className="film-player" style={{ aspectRatio: meta?.ratio || (video.delivery.includes("3:4") ? 3 / 4 : 9 / 16) }}>
+                <div className="film-player" style={{ aspectRatio: meta?.ratio || (video.delivery.includes("16:9") ? 16 / 9 : video.delivery.includes("4:3") ? 4 / 3 : video.delivery.includes("3:4") ? 3 / 4 : video.delivery.includes("1:1") ? 1 : 9 / 16) }}>
                   <video
                     ref={element => { players.current[video.id] = element; }}
                     controls

@@ -93,7 +93,7 @@
 .hr-portfolio .archive-header a:first-child { font-size: 16px; }
 .hr-portfolio .archive-header a:first-child span { font-size: 11px; }
 .hr-portfolio .film-library { width: min(1440px, calc(100% - 96px)); margin: 0 auto; padding: 32px 0 80px; }
-.film-tabs { display: flex; gap: 28px; align-items: center; border-bottom: 1px solid var(--line); }
+.film-tabs { display: flex; flex-wrap: wrap; gap: 0 28px; align-items: center; border-bottom: 1px solid var(--line); }
 .film-tabs a { min-height: 54px; display: inline-flex; align-items: center; gap: 10px; position: relative; color: #aeb3bb; font-size: 16px; }
 .film-tabs a span { color: #abb19e; font-size: 13px; font-variant-numeric: tabular-nums; }
 .film-tabs a[aria-current="page"] { color: var(--accent); }
@@ -196,8 +196,9 @@
   .hr-portfolio .archive-header { height: 78px; }
   .hr-portfolio .archive-header a:first-child { font-size: 14px; }
   .hr-portfolio .film-library { padding-top: 16px; padding-bottom: 48px; }
-  .film-tabs { gap: 22px; }
-  .film-tabs a { font-size: 14px; min-height: 54px; gap: 7px; }
+  .film-tabs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 16px; }
+  .film-tabs a { min-width: 0; padding: 8px 2px; font-size: 14px; min-height: 54px; gap: 7px; line-height: 1.4; }
+  .film-tabs a span { flex-shrink: 0; }
   .film-tabs a span { font-size: 12px; }
   .film-heading { padding: 28px 0; gap: 12px; }
   .film-heading h1 { font-size: 30px; }

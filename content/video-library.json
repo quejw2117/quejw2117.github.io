@@ -167,6 +167,118 @@
           "data": "暂未获得投放数据"
         }
       ]
+    },
+    {
+      "slug": "beauty-fashion",
+      "eyebrow": "BEAUTY / FASHION",
+      "title": "护肤品与服装",
+      "subtitle": "产品质感与穿搭展示",
+      "description": "从护肤品细节到服装造型，呈现产品展示、人物与生活场景。",
+      "tone": "mass",
+      "covers": [
+        "/commerce-videos/uploads/beauty-fashion/2026-11-03/beauty-04.jpg",
+        "/commerce-videos/uploads/beauty-fashion/2026-11-03/beauty-03.jpg"
+      ],
+      "videos": [
+        {
+          "id": "beauty-fashion-20261103-beauty-01",
+          "title": "奶油色套装",
+          "subtitle": "节日造型展示",
+          "src": "/commerce-videos/uploads/beauty-fashion/2026-11-03/beauty-01.mp4",
+          "poster": "/commerce-videos/uploads/beauty-fashion/2026-11-03/beauty-01.jpg",
+          "task": "",
+          "role": "",
+          "direction": "",
+          "method": "",
+          "correction": "",
+          "delivery": "竖屏短视频，约 6 秒。",
+          "data": ""
+        },
+        {
+          "id": "beauty-fashion-20261103-beauty-02",
+          "title": "深色拉链卫衣",
+          "subtitle": "日常穿搭展示",
+          "src": "/commerce-videos/uploads/beauty-fashion/2026-11-03/beauty-02.mp4",
+          "poster": "/commerce-videos/uploads/beauty-fashion/2026-11-03/beauty-02.jpg",
+          "task": "",
+          "role": "",
+          "direction": "",
+          "method": "",
+          "correction": "",
+          "delivery": "9:16 竖屏短视频，约 12 秒。",
+          "data": ""
+        },
+        {
+          "id": "beauty-fashion-20261103-beauty-03",
+          "title": "琥珀精华",
+          "subtitle": "产品质感概念片",
+          "src": "/commerce-videos/uploads/beauty-fashion/2026-11-03/beauty-03.mp4",
+          "poster": "/commerce-videos/uploads/beauty-fashion/2026-11-03/beauty-03.jpg",
+          "task": "",
+          "role": "",
+          "direction": "",
+          "method": "",
+          "correction": "",
+          "delivery": "3:4 竖屏短视频，约 21 秒。",
+          "data": ""
+        },
+        {
+          "id": "beauty-fashion-20261103-beauty-04",
+          "title": "美妆产品展示",
+          "subtitle": "质地与使用展示",
+          "src": "/commerce-videos/uploads/beauty-fashion/2026-11-03/beauty-04.mp4",
+          "poster": "/commerce-videos/uploads/beauty-fashion/2026-11-03/beauty-04.jpg",
+          "task": "",
+          "role": "",
+          "direction": "",
+          "method": "",
+          "correction": "",
+          "delivery": "9:16 竖屏短视频，约 20 秒。",
+          "data": ""
+        }
+      ]
+    },
+    {
+      "slug": "animated-drama",
+      "eyebrow": "STORY / DRAMA",
+      "title": "漫剧与剧情短片",
+      "subtitle": "人物对白与故事片段",
+      "description": "通过人物对白、场景和镜头节奏，呈现不同情绪与叙事片段。",
+      "tone": "mass",
+      "covers": [
+        "/commerce-videos/uploads/animated-drama/2026-11-03/drama-01.jpg",
+        "/commerce-videos/uploads/animated-drama/2026-11-03/drama-02.jpg"
+      ],
+      "videos": [
+        {
+          "id": "animated-drama-20261103-drama-01",
+          "title": "咖啡馆喜剧对话",
+          "subtitle": "室内双人对白",
+          "src": "/commerce-videos/uploads/animated-drama/2026-11-03/drama-01.mp4",
+          "poster": "/commerce-videos/uploads/animated-drama/2026-11-03/drama-01.jpg",
+          "task": "",
+          "role": "",
+          "direction": "",
+          "method": "",
+          "correction": "",
+          "delivery": "4:3 横屏短片，约 49 秒。",
+          "data": ""
+        },
+        {
+          "id": "animated-drama-20261103-drama-02",
+          "title": "石墙小径",
+          "subtitle": "双人对白片段",
+          "src": "/commerce-videos/uploads/animated-drama/2026-11-03/drama-02.mp4",
+          "poster": "/commerce-videos/uploads/animated-drama/2026-11-03/drama-02.jpg",
+          "task": "",
+          "role": "",
+          "direction": "",
+          "method": "",
+          "correction": "",
+          "delivery": "16:9 横屏短片，约 19 秒。",
+          "data": ""
+        }
+      ]
     }
   ]
 }

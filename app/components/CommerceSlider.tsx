@@ -11,11 +11,11 @@ type CommerceSliderProps = {
 export default function CommerceSlider({ categories }: CommerceSliderProps) {
   const trackRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
-  const usesSplitLayout = categories.length === 2;
+  const usesSplitLayout = categories.length >= 2;
 
   useEffect(() => {
     const track = trackRef.current;
-    if (!track) return;
+    if (!track || usesSplitLayout) return;
 
     const cards = Array.from(track.querySelectorAll<HTMLElement>(".commerce-card"));
     let frame = 0;
@@ -40,7 +40,7 @@ export default function CommerceSlider({ categories }: CommerceSliderProps) {
       cancelAnimationFrame(frame);
       track.removeEventListener("scroll", updateActive);
     };
-  }, [categories.length]);
+  }, [categories.length, usesSplitLayout]);
 
   const goTo = (index: number) => {
     const track = trackRef.current;
@@ -85,9 +85,10 @@ export default function CommerceSlider({ categories }: CommerceSliderProps) {
       <div
         className="commerce-grid"
         ref={trackRef}
-        tabIndex={0}
+        tabIndex={usesSplitLayout ? undefined : 0}
         aria-label="AI 视频分类"
         onKeyDown={(event) => {
+          if (usesSplitLayout) return;
           if (event.key === "ArrowLeft") goTo(activeIndex - 1);
           if (event.key === "ArrowRight") goTo(activeIndex + 1);
         }}
