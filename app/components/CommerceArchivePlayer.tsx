@@ -68,7 +68,7 @@ export default function CommerceArchivePlayer({ category, categories }: Props) {
             const meta = metadata[video.id];
             const notes = getNotes(video);
             return (
-              <article className="film-card" id={video.id} key={video.id} data-playing={playingId === video.id}>
+              <article className="film-card" id={video.id} tabIndex={-1} aria-labelledby={`${video.id}-title`} key={video.id} data-playing={playingId === video.id}>
                 <div className="film-player" style={{ aspectRatio: meta?.ratio || (video.delivery.includes("16:9") ? 16 / 9 : video.delivery.includes("4:3") ? 4 / 3 : video.delivery.includes("3:4") ? 3 / 4 : video.delivery.includes("1:1") ? 1 : 9 / 16) }}>
                   <video
                     ref={element => { players.current[video.id] = element; }}
@@ -117,7 +117,7 @@ export default function CommerceArchivePlayer({ category, categories }: Props) {
                       全屏观看
                     </button>
                   </div>
-                  <h2>{video.title}</h2>
+                  <h2 id={`${video.id}-title`}>{video.title}</h2>
                   <p>{video.subtitle}</p>
                   {video.featured && (
                     <dl className="film-brief" aria-label={`${video.title}案例简介`}>
