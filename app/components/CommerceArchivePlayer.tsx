@@ -13,8 +13,8 @@ function formatDuration(seconds: number) {
 
 function getNotes(video: VideoCase) {
   return [
-    ["作品背景", video.task],
-    ["本人职责", video.role],
+    ["作品背景", video.featured ? "" : video.task],
+    ["本人职责", video.featured ? "" : video.role],
     ["创作方向", video.direction],
     ["生成与后期", video.method],
     ["关键修正", video.correction],
@@ -68,7 +68,7 @@ export default function CommerceArchivePlayer({ category, categories }: Props) {
             const meta = metadata[video.id];
             const notes = getNotes(video);
             return (
-              <article className="film-card" key={video.id} data-playing={playingId === video.id}>
+              <article className="film-card" id={video.id} key={video.id} data-playing={playingId === video.id}>
                 <div className="film-player" style={{ aspectRatio: meta?.ratio || (video.delivery.includes("16:9") ? 16 / 9 : video.delivery.includes("4:3") ? 4 / 3 : video.delivery.includes("3:4") ? 3 / 4 : video.delivery.includes("1:1") ? 1 : 9 / 16) }}>
                   <video
                     ref={element => { players.current[video.id] = element; }}
@@ -119,6 +119,13 @@ export default function CommerceArchivePlayer({ category, categories }: Props) {
                   </div>
                   <h2>{video.title}</h2>
                   <p>{video.subtitle}</p>
+                  {video.featured && (
+                    <dl className="film-brief" aria-label={`${video.title}案例简介`}>
+                      <div><dt>项目目标</dt><dd>{video.task}</dd></div>
+                      <div><dt>我的职责</dt><dd>{video.role}</dd></div>
+                      <div><dt>制作工具</dt><dd>{video.tools}</dd></div>
+                    </dl>
+                  )}
                 </div>
 
                 {notes.length > 0 && (

@@ -7,6 +7,7 @@ import SpecularLink from "./components/SpecularLink";
 import SectionNavigation from "./components/SectionNavigation";
 import CommerceSlider from "./components/CommerceSlider";
 import CodexWorkflow from "./components/CodexWorkflow";
+import FeaturedFilms from "./components/FeaturedFilms";
 import { videoLibrary } from "./content/video-library";
 
 const projects = [
@@ -532,6 +533,7 @@ export default function Home() {
             </p>
           </div>
 
+          <FeaturedFilms categories={videoLibrary.categories} />
           <CommerceSlider categories={videoLibrary.categories} />
         </div>
       </section>

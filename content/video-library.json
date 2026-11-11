@@ -32,13 +32,15 @@
           "subtitle": "造型展示与烘焙演示",
           "src": "/commerce-videos/uploads/tiktok-remakes/2026-10-21/christmas-baking-molds.mp4",
           "poster": "/commerce-videos/uploads/tiktok-remakes/2026-10-21/christmas-baking-molds.jpg",
-          "task": "展示圣诞造型烘焙模具套装，以及压模、制作迷你派的过程。",
-          "role": "AI 视频创作与制作。",
-          "direction": "结合人物介绍、模具近景和操作过程，呈现不同节日造型与制作步骤。",
+          "task": "以圣诞烘焙场景展示模具造型与用途，吸引潜在客户关注商品。",
+          "role": "独立完成选品、内容调研、创意策划、分镜构思、AI 画面生成、剪辑与成片质检。",
+          "direction": "以人物与节日造型切入，再通过压模和烘焙操作呈现使用场景，让观众快速理解产品。",
           "method": "",
           "correction": "",
           "delivery": "竖屏短视频，约 30 秒。",
-          "data": ""
+          "data": "",
+          "tools": "Gemini · GPT · 即梦 · Flow",
+          "featured": true
         },
         {
           "id": "tiktok-20261021-blue-chair-cover",
@@ -116,13 +118,15 @@
           "subtitle": "静物机关与悬念揭示",
           "src": "/commerce-videos/uploads/creative-tvc/creative-tvc-01.mp4",
           "poster": "/commerce-videos/uploads/creative-tvc/creative-tvc-01.jpg",
-          "task": "围绕蛋形护手霜包装制作一支短时长概念广告，在单一场景中建立产品记忆点。",
-          "role": "创意设定、镜头设计、AI 画面生成、动作衔接、声音与成片包装。",
-          "direction": "将产品造型转化为视觉机关，以拿取、旋转和破壳式揭示制造悬念。",
+          "task": "围绕护手霜包装设计短时长概念广告，呈现产品造型与创意记忆点。",
+          "role": "独立完成选品、内容调研、创意策划、分镜构思、AI 画面生成、剪辑与成片质检。",
+          "direction": "将产品造型转化为视觉机关，以拿取、旋转与揭示镜头组织叙事。",
           "method": "统一静物台面、手部动作与包装尺度，后期控制节奏、质感和品牌露出。",
           "correction": "重点修正手指接触、包装文字、蛋壳变化与镜头间物体位置。",
           "delivery": "3:4 AI 美妆创意广告成片。",
-          "data": "暂未获得投放数据"
+          "data": "暂未获得投放数据",
+          "tools": "Gemini · GPT · 即梦 · Flow",
+          "featured": true
         },
         {
           "id": "fashion-transition-film",
@@ -214,13 +218,15 @@
           "subtitle": "产品质感概念片",
           "src": "/commerce-videos/uploads/beauty-fashion/2026-11-03/beauty-03.mp4",
           "poster": "/commerce-videos/uploads/beauty-fashion/2026-11-03/beauty-03.jpg",
-          "task": "",
-          "role": "",
-          "direction": "",
+          "task": "围绕精华产品的造型与质感，呈现护肤品的视觉表达。",
+          "role": "独立完成选品、内容调研、创意策划、分镜构思、AI 画面生成、剪辑与成片质检。",
+          "direction": "结合产品特写、金色液体与光影变化，突出精华产品的质地与画面氛围。",
           "method": "",
           "correction": "",
           "delivery": "3:4 竖屏短视频，约 21 秒。",
-          "data": ""
+          "data": "",
+          "tools": "Gemini · GPT · 即梦 · Flow",
+          "featured": true
         },
         {
           "id": "beauty-fashion-20261103-beauty-04",

@@ -1,0 +1,26 @@
+/* Selected films and compact, readable case summaries. */
+.hr-portfolio .featured-films { margin: 0 0 56px; }
+.featured-films__heading { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; margin-bottom: 22px; }
+.featured-films__heading h3 { margin: 0; color: var(--paper); font-size: 24px; line-height: 1.4; font-weight: 550; }
+.featured-films__heading p { margin: 0; color: #b0b4bc; font-size: 14px; line-height: 1.6; }
+.featured-films__grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.featured-film { min-width: 0; display: grid; grid-template-columns: 88px minmax(0, 1fr); gap: 16px; padding: 0 0 18px; border-bottom: 1px solid var(--line); text-decoration: none; }
+.featured-film img { display: block; width: 88px; height: 110px; object-fit: cover; background: #16191b; }
+.featured-film__copy { display: flex; min-width: 0; flex-direction: column; align-items: flex-start; gap: 8px; padding: 2px 0; }
+.featured-film__category { color: #b0b4bc; font-size: 13px; line-height: 1.4; }
+.featured-film__copy strong { color: var(--paper); font-size: 18px; font-weight: 550; line-height: 1.45; overflow-wrap: anywhere; }
+.featured-film__action { margin-top: auto; color: #c9ff4a; font-size: 14px; line-height: 1.5; }
+.featured-film:hover .featured-film__action { text-decoration: underline; text-underline-offset: 4px; }
+.film-card { scroll-margin-top: 28px; }
+.film-brief { margin: 20px 0 0; padding: 0; }
+.film-brief > div { display: grid; grid-template-columns: 68px minmax(0, 1fr); gap: 10px; padding: 8px 0; }
+.film-brief dt { color: #aeb3bb; font-size: 13px; line-height: 1.75; }
+.film-brief dd { margin: 0; color: #dde0d7; font-size: 14px; line-height: 1.75; overflow-wrap: anywhere; }
+@media (max-width: 700px) {
+  .hr-portfolio .featured-films { margin-bottom: 40px; }
+  .featured-films__heading { flex-direction: column; align-items: flex-start; gap: 4px; }
+  .featured-films__heading h3 { font-size: 22px; }
+  .featured-films__grid { grid-template-columns: 1fr; gap: 18px; }
+  .featured-film { grid-template-columns: 76px minmax(0, 1fr); gap: 14px; padding-bottom: 14px; }
+  .featured-film img { width: 76px; height: 92px; }
+}

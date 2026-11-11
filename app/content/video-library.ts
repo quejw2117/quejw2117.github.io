@@ -13,6 +13,8 @@ export type VideoCase = {
   correction: string;
   delivery: string;
   data: string;
+  tools?: string;
+  featured?: boolean;
 };
 
 export type VideoCategory = {
