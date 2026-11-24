@@ -5,7 +5,9 @@ export type VideoCase = {
   title: string;
   subtitle: string;
   src: string;
+  mobileSrc?: string;
   poster: string;
+  featuredPoster?: string;
   task: string;
   role: string;
   direction: string;

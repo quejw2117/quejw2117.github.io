@@ -21,7 +21,7 @@
 .hr-portfolio .hero-secondary-link { min-height: 54px; font-size: 16px; letter-spacing: 0; }
 .hr-portfolio .hero-video { opacity: .76; }
 .hr-portfolio .hero-shade { background: linear-gradient(90deg, rgba(7,8,10,.82), rgba(7,8,10,.42) 60%, rgba(7,8,10,.16)), linear-gradient(0deg, #0c0d10, transparent 28%); }
-.hr-portfolio .hero-fallback { background: #141518 url('/hero-poster.jpg') center / cover no-repeat; animation: none; }
+.hr-portfolio .hero-fallback { background: #141518 url('/hero-poster-web.webp') center / cover no-repeat; animation: none; }
 .hr-portfolio .section-space { padding: 96px 0; }
 .hr-portfolio .section-display { display: none; }
 .hr-portfolio .section-heading { margin-bottom: 40px; }
@@ -110,6 +110,11 @@
 .film-caption { padding-top: 18px; }
 .film-caption__meta { display: flex; align-items: center; gap: 12px; min-height: 34px; color: #aeb3bb; font-size: 12px; font-variant-numeric: tabular-nums; }
 .film-fullscreen { display: inline-flex; align-items: center; gap: 7px; min-height: 44px; padding: 0 0 0 10px; margin-left: auto; border: 0; background: transparent; color: #d9ddd2; font: inherit; font-size: 14px; cursor: pointer; }
+.film-original { display: none; }
+@media (max-width: 768px), (hover: none) and (pointer: coarse) {
+  .film-original { display: inline-flex; align-items: center; min-height: 44px; margin-left: auto; color: #d9ddd2; font-size: 14px; }
+  .film-original + .film-fullscreen { margin-left: 0; }
+}
 .film-fullscreen:hover { color: var(--accent); }
 .film-caption h2 { margin: 6px 0 8px; color: var(--paper); font-size: 22px; line-height: 1.4; font-weight: 550; letter-spacing: -.02em; }
 .film-caption > p { margin: 0; color: #b0b4bc; font-size: 15px; line-height: 1.8; }

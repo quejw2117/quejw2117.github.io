@@ -5,6 +5,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SpecularLink from "./components/SpecularLink";
 import SectionNavigation from "./components/SectionNavigation";
+import HeroBackground from "./components/HeroBackground";
 import CommerceSlider from "./components/CommerceSlider";
 import CodexWorkflow from "./components/CodexWorkflow";
 import FeaturedFilms from "./components/FeaturedFilms";
@@ -470,18 +471,7 @@ export default function Home() {
       </header>
 
       <section className="hero" id="top" tabIndex={-1}>
-        <video
-          className="hero-video"
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="metadata"
-          poster="/hero-poster.jpg"
-          aria-hidden="true"
-        >
-          <source src="/hero-background.mp4" type="video/mp4" />
-        </video>
+        <HeroBackground />
         <div className="hero-fallback" aria-hidden="true" />
         <div className="hero-shade" aria-hidden="true" />
 
@@ -571,6 +561,8 @@ export default function Home() {
                         <img
                           className="project-cover"
                           src={project.cover}
+                          loading="lazy"
+                          decoding="async"
                           alt=""
                         />
                       </div>
@@ -661,6 +653,8 @@ export default function Home() {
               <div className="profile-portrait-frame">
                 <img
                   src="/avatar-cartoon.png"
+                  loading="lazy"
+                  decoding="async"
                   alt="阙嘉炜的卡通形象"
                   width="1254"
                   height="1254"
@@ -785,6 +779,8 @@ export default function Home() {
               <img
                 className="qr-image"
                 src="/wechat-qr.jpg"
+                loading="lazy"
+                decoding="async"
                 alt="阙嘉炜的微信二维码，扫码添加好友"
               />
               <span className="qr-corner qr-corner--tl" />

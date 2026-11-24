@@ -12,8 +12,8 @@ export default function FeaturedFilms({ categories }: { categories: VideoCategor
       <div className="featured-films__heading"><h3 id="featured-films-title">精选作品</h3><p>三个案例，了解创意与制作过程。</p></div>
       <div className="featured-films__grid">
         {featured.map(({ video, category }) => (
-          <Link className="featured-film" key={video.id} href={`/commerce/${category.slug}/#${video.id}`}>
-            <img src={video.poster} alt="" loading="lazy" />
+          <Link className="featured-film" prefetch={false} key={video.id} href={`/commerce/${category.slug}/#${video.id}`}>
+            <img src={video.featuredPoster || video.poster} alt="" width="176" height="220" loading="lazy" decoding="async" />
             <span className="featured-film__copy"><span className="featured-film__category">{category.title}</span><strong>{video.title}</strong><span className="featured-film__action">查看作品 <span aria-hidden="true">↗</span></span></span>
           </Link>
         ))}

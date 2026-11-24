@@ -98,6 +98,7 @@ export default function CommerceSlider({ categories }: CommerceSliderProps) {
             className={`commerce-card commerce-card--${category.tone} specular-reactive`}
             href={`/commerce/${category.slug}/`}
             key={category.slug}
+            prefetch={false}
             aria-label={`查看${category.title}视频案例`}
           >
             <div className="commerce-card__media">
@@ -105,6 +106,8 @@ export default function CommerceSlider({ categories }: CommerceSliderProps) {
                 <img
                   className="commerce-card__image"
                   src={image}
+                  loading="lazy"
+                  decoding="async"
                   alt=""
                   key={`${category.slug}-${imageIndex}`}
                   aria-hidden="true"

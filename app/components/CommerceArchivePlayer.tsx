@@ -32,10 +32,13 @@ export default function CommerceArchivePlayer({ category, categories }: Props) {
   async function fullscreen(id: string) {
     const player = players.current[id] as (HTMLVideoElement & { webkitEnterFullscreen?: () => void }) | null;
     if (!player) return;
+    const playing = player.play().catch(() => player.focus());
     try {
       if (player.requestFullscreen) await player.requestFullscreen();
-      else if (player.webkitEnterFullscreen) player.webkitEnterFullscreen();
-      await player.play();
+      else {
+        await playing;
+        player.webkitEnterFullscreen?.();
+      }
     } catch {
       player.focus();
     }
@@ -52,7 +55,7 @@ export default function CommerceArchivePlayer({ category, categories }: Props) {
       <div className="film-library">
         <nav className="film-tabs" aria-label="视频作品分类">
           {categories.map(item => (
-            <Link key={item.slug} href={`/commerce/${item.slug}/`} aria-current={item.slug === category.slug ? "page" : undefined}>
+            <Link prefetch={false} key={item.slug} href={`/commerce/${item.slug}/`} aria-current={item.slug === category.slug ? "page" : undefined}>
               {item.title}<span>{item.videos.length}</span>
             </Link>
           ))}
@@ -74,7 +77,7 @@ export default function CommerceArchivePlayer({ category, categories }: Props) {
                     ref={element => { players.current[video.id] = element; }}
                     controls
                     playsInline
-                    preload="metadata"
+                    preload="none"
                     poster={video.poster || undefined}
                     aria-label={`${video.title}视频案例`}
                     onLoadedMetadata={event => {
@@ -94,14 +97,28 @@ export default function CommerceArchivePlayer({ category, categories }: Props) {
                     onEnded={() => setPlayingId(current => current === video.id ? null : current)}
                     onError={() => setErrors(current => ({ ...current, [video.id]: true }))}
                   >
-                    <source src={video.src} type="video/mp4" />
+                    {video.mobileSrc && (
+                      <source
+                        media="(max-width: 768px), (hover: none) and (pointer: coarse)"
+                        src={video.mobileSrc}
+                        type="video/mp4"
+                      />
+                    )}
+                    <source
+                      src={video.src}
+                      onError={() => setErrors(current => ({ ...current, [video.id]: true }))}
+                    />
                   </video>
                   {errors[video.id] && (
                     <div className="film-error" role="alert">
                       <p>视频暂时没有加载成功。</p>
                       <button type="button" onClick={() => {
                         setErrors(current => ({ ...current, [video.id]: false }));
-                        players.current[video.id]?.load();
+                        const player = players.current[video.id];
+                        if (player) {
+                          player.load();
+                          void player.play().catch(() => player.focus());
+                        }
                       }}>重新加载</button>
                       <a href={video.src} target="_blank" rel="noreferrer">单独打开视频 ↗</a>
                     </div>
@@ -112,6 +129,11 @@ export default function CommerceArchivePlayer({ category, categories }: Props) {
                   <div className="film-caption__meta">
                     <span>{String(index + 1).padStart(2, "0")} / {String(category.videos.length).padStart(2, "0")}</span>
                     {meta && Number.isFinite(meta.duration) && <span>{formatDuration(meta.duration)}</span>}
+                    {video.mobileSrc && (
+                      <a className="film-original" href={video.src} target="_blank" rel="noreferrer" aria-label={`查看${video.title}高清原片`}>
+                        高清原片
+                      </a>
+                    )}
                     <button className="film-fullscreen" type="button" onClick={() => fullscreen(video.id)} aria-label={`全屏观看${video.title}`}>
                       <svg viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true"><path d="M7 3H3v4m10-4h4v4M3 13v4h4m10-4v4h-4" /></svg>
                       全屏观看
